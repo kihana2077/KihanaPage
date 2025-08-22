@@ -1,5 +1,10 @@
 site_name: Kihana的个人博客
+
+
 theme:
   name: material
+  language: zh
+
+  
 icon:
   logo: material/github
