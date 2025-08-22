@@ -1,4 +1,4 @@
-name: kihana 
+name: ci
 on:
   push:
     branches:
