@@ -1,5 +1,6 @@
-site_name: Kihana的个人博客
-
+site_name: Kihana | Blog
+site_description: Kihana的个人博客
+site_author: Kihana
 
 theme:
   name: material
