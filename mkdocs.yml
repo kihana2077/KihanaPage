@@ -9,4 +9,8 @@ theme:
     - navigation.tabs
     - search.highlight
 icon:
-  logo: material/cat
+  logo: material/github
+
+
+plugin:
+  - blog
