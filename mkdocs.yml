@@ -8,4 +8,4 @@ theme:
     - navigation.tabs
     - search.highlight
 icon:
-  logo: material/github
+  logo: material/cat
