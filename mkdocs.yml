@@ -4,7 +4,8 @@ site_name: Kihana的个人博客
 theme:
   name: material
   language: zh
-
-  
+  features:
+    - navigation.tabs
+    - search.highlight
 icon:
   logo: material/github
