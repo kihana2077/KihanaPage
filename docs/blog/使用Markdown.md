@@ -1,5 +1,10 @@
 ## Markdown语法
+通过使用VScode与markdown相关插件，我们可以快速进行markdown语法文件的编辑与预览，同时通过githubdesktop、git等工具将修改内容push到github库，并依靠workflows实现自动部署actions
 
+
+以下是Markdown基础语法
+
+---
 
 # 标题
 ```# 标题```
