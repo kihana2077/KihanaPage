@@ -39,7 +39,10 @@ theme:
 
 plugins:
   - search
-  - blog
+  - blog: 
+      blog_dir: blog/2025/
+      blog_toc: true
+  - tags
   - document-dates:
       position: top            # 显示位置：top（标题后） bottom（文档末尾）
       type: date               # 时间类型：date datetime timeago，默认：date
@@ -51,8 +54,52 @@ plugins:
       time_format: '%H:%M:%S'  # 时间格式化字符串（仅在 type=datetime 时有效）
       show_author: true        # 是否显示作者信息，默认：true
 
-  
 
+markdown_extensions:
+      - abbr
+      - attr_list
+      - admonition
+      - def_list
+      - footnotes
+      - md_in_html
+      - meta # 支持Markdown文件上方自定义标题标签等
+      - pymdownx.caret
+      - pymdownx.betterem
+      - pymdownx.critic
+      - pymdownx.details
+      - pymdownx.inlinehilite
+      - pymdownx.keys
+      - pymdownx.mark
+      - pymdownx.snippets
+      - pymdownx.smartsymbols
+      - pymdownx.tilde
+      - pymdownx.superfences:
+          custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:pymdownx.superfences.fence_code_format # 代码块高亮插件
+      - pymdownx.arithmatex:  # latex支持
+          generic: true
+      - toc:
+          permalink: true # 固定标题位置为当前位置
+          toc_depth: 3
+      - pymdownx.highlight: # 代码块高亮
+          anchor_linenums: true
+          linenums: true # 显示行号
+          auto_title: true # 显示编程语言名称
+      - pymdownx.emoji:
+          emoji_index: !!python/name:material.extensions.emoji.twemoji
+          emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      - pymdownx.tabbed:
+          alternate_style: true
+      - pymdownx.tasklist:
+          custom_checkbox: true
+      - markdown.extensions.toc:
+          slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
+          permalink: "\ue157"
+
+extra_css:
+  - stylesheets/extra.css
 
 
 copyright: Copyright © 2025 Kihana <a href="https://icp.gov.moe/?keyword=20250772" target="_blank">萌ICP备20250772号</a>  

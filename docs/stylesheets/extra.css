@@ -1,0 +1,9 @@
+.md-typeset .admonition.abstract {
+  border-color: #448aff;       /* 边框颜色 */
+  background-color: #e3f2fd;   /* 背景色 */
+}
+
+.md-button:hover {
+  transform: scale(1);
+  transition: transform 0.3s;
+}
