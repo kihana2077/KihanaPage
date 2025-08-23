@@ -12,6 +12,8 @@
 主要记录一些学习与生活中的点滴
 感谢您的浏览
 ```
+## 重复访问者计数
+![www.kihana.fun](https://count.getloli.com/@www.kihana.fun?name=www.kihana.fun&theme=yousa-ling&padding=6&offset=0&align=top&scale=1&pixelated=1&darkmode=auto)
 ## 关于我
 - 网络安全本科生在读
 - 喜欢浪费时间折腾各种不切实际的东西
