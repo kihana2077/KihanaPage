@@ -36,6 +36,7 @@ plugins:
 
 nav:
   - 主页: index.md
+  - 博客: blog\Markdown使用教程.md
   - 扩列: aboutme.md
 
 copyright: Copyright Kihana2025 | All Rights Reserved
