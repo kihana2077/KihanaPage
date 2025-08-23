@@ -7,7 +7,7 @@ repo_name: Kihana的库
 theme:
   name: material
   language: zh
-
+  custom_dir: docs/overrides
   icon:
     logo: material/github
   palette:
