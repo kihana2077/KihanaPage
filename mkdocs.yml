@@ -3,7 +3,7 @@ site_description: Kihana的个人博客
 site_author: Kihana
 
 repo_url: https://github.com/kihana2077/KihanaPage
-repo_name: Kihana的博客库
+repo_name: Kihana的库
 theme:
   name: material
   language: zh
@@ -36,7 +36,9 @@ plugins:
 
 nav:
   - 主页: index.md
-  - 博客: docs\blog\how-to-useMarkdown.md
+  - 博客: 
+    - blog/使用Markdown.md
+    - blog/我的第一篇博客.md
   - 扩列: aboutme.md
 
 copyright: Copyright © 2025 Kihana | All Rights Reserved
