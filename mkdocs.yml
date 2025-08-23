@@ -6,6 +6,7 @@ repo_url: https://github.com/kihana2077/KihanaPage
 repo_name: Kihana的库
 theme:
   name: material
+  custom_dir: overrides  
   language: zh
   logo: assets/favicon.ico
   favicon: assets/favicon.ico
