@@ -7,9 +7,8 @@ repo_name: Kihana的库
 theme:
   name: material
   language: zh
+  logo: assets/favicon.ico
   favicon: assets/favicon.ico
-  icon:
-    logo: material/github
   palette:
     - media: "(prefers-color-scheme)"
       toggle:
@@ -59,11 +58,13 @@ nav:
 copyright: Copyright © 2025 Kihana <a href="https://icp.gov.moe/?keyword=20250772" target="_blank">萌ICP备20250772号</a>  
 
 extra: 
+  version:
+    provider: mike
   alternate:
         - name: English
-          link: https://wcowin-work.translate.goog/?_x_tr_sl=zh-CN&_x_tr_tl=en&_x_tr_hl=zh-CN&_x_tr_pto=wapp 
+          link: https://kihana-fun.translate.goog/?_x_tr_sl=zh-CN&_x_tr_tl=en&_x_tr_hl=zh-CN&_x_tr_pto=wapp 
           lang: en
-        - name: 中国(台湾)
-          link: https://wcowin-work.translate.goog/?_x_tr_sl=zh-CN&_x_tr_tl=zh-TW&_x_tr_hl=zh-CN&_x_tr_pto=wapp
+        - name: 繁体中文
+          link: https://kihana-fun.translate.goog/?_x_tr_sl=zh-CN&_x_tr_tl=zh-TW&_x_tr_hl=zh-CN&_x_tr_pto=wapp
           lang: zh-TW
   generator: true
