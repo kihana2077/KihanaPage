@@ -7,9 +7,7 @@ repo_name: Kihana的博客库
 theme:
   name: material
   language: zh
-  features:
-    - navigation.tabs
-    - search.highlight
+
   icon:
     logo: material/github
   palette:
