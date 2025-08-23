@@ -14,3 +14,6 @@ icon:
 
 plugin:
   - blog
+
+nav:
+  - 主页: index.md
