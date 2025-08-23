@@ -1,49 +1,21 @@
-# 欢迎！我们欢迎！
+# 欢迎来到Kihana的个人主页!!!
+## 欢迎！我们欢迎！
 
-
-该网站正在构建中，依靠非常蛋疼的gitpages，更多信息敬请期待！！
-
-
-## Commands
-
-wait for a moment...  
-wait for a moment...  
-wait for a moment...  
-wait for a moment...  
-wait for a moment...  
-
-
-## Project layout  
-wait for a moment...  
-wait for a moment...  
-wait for a moment...  
-wait for a moment...  
-wait for a moment...  
-
-
-1111111   
-1  
-23
-
-3424
-
-242
-
-
-242
-
-
-2142
-
-
-242
+摘要
+```
+这里是 Kihana 的个人博客
+主要记录一些学习与生活中的点滴
+感谢您的浏览
+```
+### 关于我
+- 网络安全本科生在读
+- 喜欢浪费时间折腾各种不切实际的东西
+- 最近在折腾MMD与blender等各种东西
+- 因为爱好并非主业而不想浪费太多时间
+- 硬着头皮写出来一堆bug，最终还不如AI一分钟生成
+- 因为不熟悉Github而折腾了很长时间个人博客的笨蛋
 
 
 
-11
-24242
-
-
-54645
 
 
