@@ -1,4 +1,4 @@
-site_name: Kihana | Blog
+site_name: Kihana's Blog
 site_description: Kihana的个人博客
 site_author: Kihana
 
@@ -30,6 +30,11 @@ theme:
     - navigation.top
     - navigation.tracking
     - content.code.copy
+    - navigation.expand
+    - navigation.indexes
+    - navigation.path
+    - toc.follow
+
 
 plugins:
   - search
@@ -47,19 +52,11 @@ plugins:
 
   
 
-nav:
-  - 主页: index.md
-  - 博客: 
-    - blog/使用Markdown.md
-    - blog/我的第一篇博客.md
-    - blog/写在建立博客之初.md
-  - 扩列: aboutme.md
+
 
 copyright: Copyright © 2025 Kihana <a href="https://icp.gov.moe/?keyword=20250772" target="_blank">萌ICP备20250772号</a>  
 
 extra: 
-  version:
-    provider: mike
   alternate:
         - name: English
           link: https://kihana-fun.translate.goog/?_x_tr_sl=zh-CN&_x_tr_tl=en&_x_tr_hl=zh-CN&_x_tr_pto=wapp 
