@@ -8,12 +8,14 @@ theme:
   features:
     - navigation.tabs
     - search.highlight
-icon:
-  logo: material/github
 
 
-plugin:
+
+plugins:
+  - search
   - blog
+
+  
 
 nav:
   - 主页: index.md
