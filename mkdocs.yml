@@ -2,6 +2,8 @@ site_name: Kihana | Blog
 site_description: Kihana的个人博客
 site_author: Kihana
 
+repo_url: https://github.com/kihana2077/KihanaPage
+repo_name: Kihana的博客库
 theme:
   name: material
   language: zh
@@ -10,8 +12,23 @@ theme:
     - search.highlight
   icon:
     logo: material/github
-    
-
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: 亮色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: 暗色模式
+  features:
+    - navigation.footer
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - content.code.copy
 
 plugins:
   - search
