@@ -27,7 +27,7 @@ hide:
 - 因为不熟悉Github而折腾了很长时间个人博客的笨蛋
 - 喜欢宅的家里蹲
 
-[扩列 :material-gamepad-variant-outline:](aboutme.md){ .md-button .md-button--primary }
+[扩列 :material-gamepad-variant-outline:](aboutme.md){ .md-button .md-button--primary }                     [标签 :material-tag-outline:](tags.md){ .md-button }
 
 
 

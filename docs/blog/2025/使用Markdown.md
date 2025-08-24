@@ -1,3 +1,8 @@
+---
+tags:
+  - Markdown
+  - 博客
+---
 ## Markdown语法
 通过使用VScode与markdown相关插件，我们可以快速进行markdown语法文件的编辑与预览，同时通过githubdesktop、git等工具将修改内容push到github库，并依靠workflows实现自动部署actions
 
@@ -159,7 +164,7 @@ $\theta=x^2$
 ## 链接
 
 ```[百度](baidu.com "一个垃圾的搜索引擎")```
-[百度](baidu.com "一个垃圾的搜索引擎")
+[百度](http://www.baidu.com "一个垃圾的搜索引擎")
 
 
 ## 引用链接
@@ -167,25 +172,25 @@ $\theta=x^2$
 [百度][id]
 
 
-[id]: baidu.com "一个垃圾的搜索引擎"
+[id]: http://www.baidu.com "一个垃圾的搜索引擎"
 
 
 [谷歌][2]
 
 
-[2]: Google.com "一个还可以的搜索引擎"
+[2]: http://www.Google.com "一个还可以的搜索引擎"
 ```
 
 [百度][id]
 
 
-[id]: baidu.com "一个垃圾的搜索引擎"
+[id]: http://www.baidu.com "一个垃圾的搜索引擎"
 
 
 [谷歌][2]
 
 
-[2]: Google.com "一个还可以的搜索引擎"
+[2]: http://www.Google.com "一个还可以的搜索引擎"
 
 
 ## 链接设置到标题
