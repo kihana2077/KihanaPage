@@ -78,7 +78,7 @@ hide:
         <div class="card">
           <img
             class="ava"
-            src="assets/onimai.png"
+            src="/docs/assets/onimai.png"
           />
           <div class="card-header">
             <div>
