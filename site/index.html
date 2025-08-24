@@ -14,7 +14,7 @@
       
       
       
-        <link rel="next" href="aboutme/">
+        <link rel="next" href="contact/">
       
       
       <link rel="icon" href="assets/favicon.ico">
@@ -27,9 +27,6 @@
     
     
       <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
-      
-        
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -49,6 +46,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="stylesheets/custom.css">
     
       <link rel="stylesheet" href="assets/document_dates/fonts/material-icons.css">
     
@@ -75,26 +74,10 @@
     
     
     
-   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-    html.glightbox-open { overflow: initial; height: 100%; }
-    .gslide-title { margin-top: 0px; user-select: text; }
-    .gslide-desc { color: #666; user-select: text; }
-    .gslide-image img { background: white; }
-    .gscrollbar-fixer { padding-right: 15px; }
-    .gdesc-inner { font-size: 0.75rem; }
-    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+  </head>
   
   
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -142,42 +125,6 @@
         </div>
       </div>
     </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="跟随系统"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="跟随系统" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="亮色模式"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="亮色模式" for="__palette_2" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="暗色模式"  type="radio" name="__palette" id="__palette_2">
-    
-      <label class="md-header__button md-icon" title="暗色模式" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-</form>
-      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -304,13 +251,70 @@
   
   
     <li class="md-tabs__item">
-      <a href="aboutme/" class="md-tabs__link">
+      <a href="contact/" class="md-tabs__link">
         
   
   
     
   
-  扩列
+  留言板
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="friend/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  友链
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  标签
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="toc/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  目录
 
       </a>
     </li>
@@ -479,12 +483,78 @@
   
   
     <li class="md-nav__item">
-      <a href="aboutme/" class="md-nav__link">
+      <a href="contact/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    扩列
+    留言板
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="friend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    友链
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    标签
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="toc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    目录
     
   </span>
   
@@ -522,7 +592,7 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -539,14 +609,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Blog
           </label>
@@ -575,6 +645,8 @@
       
         
       
+        
+      
     
     
     
@@ -588,7 +660,7 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -605,14 +677,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
             <span class="md-nav__icon md-icon"></span>
             2025
           </label>
@@ -633,6 +705,29 @@
   
   <span class="md-ellipsis">
     Github Pages文档自动化部署
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="blog/2025/material/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Admonition扩展语法
     
   </span>
   
@@ -804,17 +899,17 @@
 
   <h1>主页</h1>
 
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-08-23'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-08-23T00:38:10+08:00'>2025-08-23</time></span><span data-tippy-content data-tippy-raw='2025-08-24'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-08-24T18:50:13.898591+08:00'>2025-08-24</time></span><span class='material-icons' data-icon='doc_authors'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='kihana' data-tippy-content data-tippy-raw='&lt;a href="mailto:strphia@163.com"&gt;kihana&lt;/a&gt;'><span class='avatar-text'></span><img class='avatar' src='' /></div><div class='avatar-wrapper' data-name='kihana2077' data-tippy-content data-tippy-raw='&lt;a href="mailto:strphia@163.com"&gt;kihana2077&lt;/a&gt;'><span class='avatar-text'></span><img class='avatar' src='' /></div></div></div></div>
-<p><a class="glightbox" href="3E634C1DF482FC0E7E720422D76FE6F.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="3E634C1DF482FC0E7E720422D76FE6F.png" /></a></p>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-08-23'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-08-23T00:38:10+08:00'>2025-08-23 00:38</time></span><span data-tippy-content data-tippy-raw='2025-08-25'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-08-25T01:48:53.273932+08:00'>2025-08-25 01:48</time></span><span class='material-icons' data-icon='doc_authors'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='kihana' data-tippy-content data-tippy-raw='&lt;a href="mailto:strphia@163.com"&gt;kihana&lt;/a&gt;'><span class='avatar-text'></span><img class='avatar' src='' /></div><div class='avatar-wrapper' data-name='kihana2077' data-tippy-content data-tippy-raw='&lt;a href="mailto:strphia@163.com"&gt;kihana2077&lt;/a&gt;'><span class='avatar-text'></span><img class='avatar' src='' /></div></div></div></div>
+<p><img alt="alt text" src="3E634C1DF482FC0E7E720422D76FE6F.png" /></p>
 <h2 id="欢迎欢迎我们欢迎">欢迎！欢迎！我们欢迎！<a class="headerlink" href="#欢迎欢迎我们欢迎" title="Permanent link"></a></h2>
 <div class="admonition abstract">
-<p class="admonition-title">摘要</p>
+<p class="admonition-title">Hello</p>
 <p>这里是 Kihana 的个人博客</p>
 <p>主要记录一些学习与生活中的点滴</p>
 <p>感谢您的浏览</p>
 </div>
 <h2 id="重复访问者计数">重复访问者计数<a class="headerlink" href="#重复访问者计数" title="Permanent link"></a></h2>
-<p><a class="glightbox" href="https://count.getloli.com/@www.kihana.fun?name=www.kihana.fun&amp;theme=yousa-ling&amp;padding=6&amp;offset=0&amp;align=top&amp;scale=1&amp;pixelated=1&amp;darkmode=auto" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="www.kihana.fun" src="https://count.getloli.com/@www.kihana.fun?name=www.kihana.fun&amp;theme=yousa-ling&amp;padding=6&amp;offset=0&amp;align=top&amp;scale=1&amp;pixelated=1&amp;darkmode=auto" /></a></p>
+<p><img alt="www.kihana.fun" src="https://count.getloli.com/@www.kihana.fun?name=www.kihana.fun&amp;theme=yousa-ling&amp;padding=6&amp;offset=0&amp;align=top&amp;scale=1&amp;pixelated=1&amp;darkmode=auto" /></p>
 <h2 id="关于我">关于我<a class="headerlink" href="#关于我" title="Permanent link"></a></h2>
 <ul>
 <li>网络安全本科生在读</li>
@@ -826,7 +921,7 @@
 <li>因为不熟悉Github而折腾了很长时间个人博客的笨蛋</li>
 <li>喜欢宅的家里蹲</li>
 </ul>
-<p><a class="md-button md-button--primary" href="aboutme/">扩列 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 9h2v2h2v2H8v2H6v-2H4v-2h2zm12.5 0a1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5 1.5 1.5 0 0 1-1.5-1.5A1.5 1.5 0 0 1 18.5 9m-3 3a1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5 1.5 1.5 0 0 1-1.5-1.5 1.5 1.5 0 0 1 1.5-1.5M17 5a7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.96 0-3.73-.8-5-2.1A6.96 6.96 0 0 1 7 19a7 7 0 0 1-7-7 7 7 0 0 1 7-7zM7 7a5 5 0 0 0-5 5 5 5 0 0 0 5 5c1.64 0 3.09-.79 4-2h2c.91 1.21 2.36 2 4 2a5 5 0 0 0 5-5 5 5 0 0 0-5-5z"/></svg></span></a>                     <a class="md-button" href="tags.md">标签 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span></a></p>
+<p><a class="md-button md-button--primary" href="friend/">友链 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 9h2v2h2v2H8v2H6v-2H4v-2h2zm12.5 0a1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5 1.5 1.5 0 0 1-1.5-1.5A1.5 1.5 0 0 1 18.5 9m-3 3a1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5 1.5 1.5 0 0 1-1.5-1.5 1.5 1.5 0 0 1 1.5-1.5M17 5a7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.96 0-3.73-.8-5-2.1A6.96 6.96 0 0 1 7 19a7 7 0 0 1-7-7 7 7 0 0 1 7-7zM7 7a5 5 0 0 0-5 5 5 5 0 0 0 5 5c1.64 0 3.09-.79 4-2h2c.91 1.21 2.36 2 4 2a5 5 0 0 0 5-5 5 5 0 0 0-5-5z"/></svg></span></a>                     <a class="md-button" href="tags/">标签 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span></a></p>
 
 
 
@@ -921,13 +1016,13 @@
         
         
           
-          <a href="aboutme/" class="md-footer__link md-footer__link--next" aria-label="下一页: 扩列">
+          <a href="contact/" class="md-footer__link md-footer__link--next" aria-label="下一页: 留言板">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                扩列
+                留言板
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -947,6 +1042,11 @@
       Copyright © 2025 Kihana <a href="https://icp.gov.moe/?keyword=20250772" target="_blank">萌ICP备20250772号</a>
     </div>
   
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
   
 </div>
       
@@ -982,7 +1082,5 @@
         <script src="assets/document_dates/core/core.js"></script>
       
     
-  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
-document$.subscribe(() => { lightbox.reload() });
-</script></body>
+  </body>
 </html>

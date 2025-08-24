@@ -3,6 +3,7 @@ title: 主页
 hide:
     - footer
 comments: false
+glightbox: false
 ---
 ![alt text](3E634C1DF482FC0E7E720422D76FE6F.png)
 
@@ -28,7 +29,7 @@ comments: false
 - 因为不熟悉Github而折腾了很长时间个人博客的笨蛋
 - 喜欢宅的家里蹲
 
-[友链 :material-gamepad-variant-outline:](aboutme.md){ .md-button .md-button--primary }                     [标签 :material-tag-outline:](tags.md){ .md-button }
+[友链 :material-gamepad-variant-outline:](friend.md){ .md-button .md-button--primary }                     [标签 :material-tag-outline:](tags.md){ .md-button }
 
 
 
