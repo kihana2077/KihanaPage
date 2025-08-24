@@ -78,7 +78,7 @@ hide:
         <div class="card">
           <img
             class="ava"
-            src="https://www.img520.com/qK5sOD.png"
+            src="https://github.com/kihana2077/KihanaPage/raw/main/docs/assets/onimai.png"
           />
           <div class="card-header">
             <div>
