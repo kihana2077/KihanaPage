@@ -2,12 +2,13 @@
 title: 主页
 hide:
     - footer
+comments: false
 ---
 ![alt text](3E634C1DF482FC0E7E720422D76FE6F.png)
 
 ## 欢迎！欢迎！我们欢迎！
 
-!!! abstract "摘要"
+!!! abstract "Hello"
 
     这里是 Kihana 的个人博客
 
