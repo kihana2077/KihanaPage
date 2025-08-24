@@ -31,6 +31,7 @@ theme:
     - navigation.top
     - navigation.tracking
     - content.code.copy
+    - content.code.select
     - navigation.expand
     - navigation.indexes
     - navigation.path
@@ -100,7 +101,10 @@ markdown_extensions:
 
 extra_css:
   - stylesheets/extra.css
-
+extra_javascript:
+  - javascripts/extra.js
+hooks:
+  - overrides/hooks/reading_time.py
 
 copyright: Copyright © 2025 Kihana <a href="https://icp.gov.moe/?keyword=20250772" target="_blank">萌ICP备20250772号</a>  
 
