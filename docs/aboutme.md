@@ -1,14 +1,13 @@
 ---
-title: 扩列
+title: 友链
 hide:
   - navigation
   - footer
 ---
-This is a text file.  
-This is a text file.  
-This is a text file.  
-This is a text file.  
-This is a text file.  
-This is a text file.  
-This is a text file.  
-This is a text file.  
+## 我们欢迎友链  
+
+~~如果您看得上我的博客的话~~
+   
+
+
+PS：请在下方讨论区附上您的链接

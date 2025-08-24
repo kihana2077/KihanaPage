@@ -129,3 +129,5 @@ extra:
           link: https://kihana-fun.translate.goog/?_x_tr_sl=zh-CN&_x_tr_tl=zh-TW&_x_tr_hl=zh-CN&_x_tr_pto=wapp
           lang: zh-TW
   generator: false
+  toc:
+    template: templates/toc_template.html
