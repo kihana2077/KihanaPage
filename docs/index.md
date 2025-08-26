@@ -5,7 +5,7 @@ hide:
 comments: false
 glightbox: false
 ---
-![alt text](3E634C1DF482FC0E7E720422D76FE6F.png)
+![alt text](waifu_kamome.png)
 
 ## 欢迎！欢迎！我们欢迎！
 
