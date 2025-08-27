@@ -42,7 +42,7 @@ theme:
 
 plugins:
   - search
-  #- statistics
+  - statistics
   - blog: 
       blog_dir: blog/2025/
       blog_toc: true
@@ -117,8 +117,8 @@ extra_css:
   - stylesheets/custom.css
 # extra_javascript:
 #   - javascripts/theme_switcher.js
-hooks:
-  - overrides/hooks/reading_time.py
+# hooks:
+#   - overrides/hooks/reading_time.py
 
 copyright: Copyright © 2025 Kihana <a href="https://icp.gov.moe/?keyword=20250772" target="_blank">萌ICP备20250772号</a>  
 
