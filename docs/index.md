@@ -2,7 +2,7 @@
 title: 主页
 hide:
     - footer
-comments: false
+giscus: false
 glightbox: false
 ---
 ![alt text](waifu_kamome.png)
