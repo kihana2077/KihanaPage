@@ -46,8 +46,17 @@ plugins:
   - blog: 
       blog_dir: blog/2025/
       blog_toc: true
-  - tags:
-      tags_file: tags.md
+  - blogging:
+      locale: zh
+      dirs:
+        - blog
+      features:
+        tags: {}
+      theme:
+        name: card
+        time_format: '%Y-%m-%d %H:%M:%S'
+        meta_time_format: '%Y-%m-%d %H:%M:%S'
+  - tags
   - document-dates:
       position: top            # 显示位置：top（标题后） bottom（文档末尾）
       type: datetime               # 时间类型：date datetime timeago，默认：date
@@ -67,6 +76,17 @@ plugins:
       zoomable: true
       draggable: true
 
+# nav: 
+#   - 首页: index.md
+#   - 留言板: contact.md
+#   - 友链: friend.md
+#   - 标签: tags.md
+#   - Blog: 
+#       - 正则表达式 语法: 正则.md
+#       - Markdown语法: 使用Markdown.md
+#       - Admonition扩展语法: material.md
+#       - Github Pages文档自动化部署: first.md
+#       - 我的第一篇博客: 我的第一篇博客.md
 
 
 markdown_extensions:
