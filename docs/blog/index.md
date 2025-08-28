@@ -1,5 +1,6 @@
 ---
 title: 博客
+exclude_from_blog: true
 ---
 # 浏览Explore  
 #### 本博客将按照年月日的时间归档  
