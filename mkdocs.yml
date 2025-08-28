@@ -1,9 +1,10 @@
 site_name: Kihana's Blog
 site_description: Kihana的个人博客
 site_author: Kihana
-
+site_url: https://www.kihana.fun/
 repo_url: https://github.com/kihana2077/KihanaPage
 repo_name: KihanaPage
+
 theme:
   name: material
   custom_dir: overrides  
@@ -140,7 +141,9 @@ extra_css:
 # hooks:
 #   - overrides/hooks/reading_time.py
 
+
 copyright: Copyright © 2025 Kihana <a href="https://icp.gov.moe/?keyword=20250772" target="_blank">萌ICP备20250772号</a>  
+
 
 extra: 
   # alternate:
