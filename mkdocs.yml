@@ -8,7 +8,7 @@ repo_name: KihanaPage
 theme:
   name: material
   custom_dir: overrides  
-  language: zh
+  language: zh_CN
   font: Noto Sans Simplified Chinese
   logo: assets/favicon.ico
   favicon: assets/favicon.ico
