@@ -56,7 +56,7 @@ plugins:
       theme:
         name: card
         time_format: '%Y-%m-%d %H:%M:%S'
-        meta_time_format: '%Y-%m-%d %H:%M:%S'
+        # meta_time_format: '%Y-%m-%d %H:%M:%S'
   - tags
   - document-dates:
       position: top            # 显示位置：top（标题后） bottom（文档末尾）
