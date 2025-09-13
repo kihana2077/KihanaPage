@@ -5,7 +5,6 @@ hide:
   - footer
 glightbox: False
 ---
-![alt text](c0dca3931e586a5bd068640428a4c17c_720.jpg)
 !!! abstract
     一些朋友们的小站
 
