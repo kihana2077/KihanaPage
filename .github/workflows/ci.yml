@@ -32,5 +32,4 @@ jobs:
       - run: pip install mkdocs-glightbox
       - run: pip install mkdocs-statistics-plugin
       - run: pip install mkdocs-blogging-plugin
-      - run: pip install wordcloud
       - run: mkdocs gh-deploy --force
