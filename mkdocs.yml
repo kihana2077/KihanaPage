@@ -138,7 +138,8 @@ extra_css:
   - stylesheets/custom.css
 # extra_javascript:
 #   - javascripts/theme_switcher.js
-# hooks:
+hooks:
+    - scripts/generate_tag_cloud.py
 #   - overrides/hooks/reading_time.py
 
 
