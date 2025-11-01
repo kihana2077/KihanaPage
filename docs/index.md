@@ -6,7 +6,7 @@ giscus: false
 glightbox: false
 statistics: true
 ---
-![alt text](waifu_kamome.png)
+![alt text](qianyu_waifu.png)
 
 ## 欢迎！欢迎！我们欢迎！
 
