@@ -51,6 +51,9 @@ plugins:
       custom_format: "%Y-%m-%d %H:%M"
       exclude: 
           - index.md
+          - friend.md
+          - tags.md
+          - toc.md
       strict: true
   - statistics
   - blog: 
