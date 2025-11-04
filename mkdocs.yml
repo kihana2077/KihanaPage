@@ -77,7 +77,7 @@ plugins:
       zoomable: true
       draggable: true
   - git-revision-date-localized:
-      type: datetime
+      type: date
       timezone: Asia/Shanghai
       locale: zh
       enable_creation_date: true
@@ -146,7 +146,8 @@ extra_css:
   - stylesheets/extra.css
   - stylesheets/custom.css
 extra_javascript:
-  - javascripts/extra.js
+  # - javascripts/extra.js
+  - javascripts/background.js
 # hooks:
 #   - overrides/hooks/reading_time.py
 
