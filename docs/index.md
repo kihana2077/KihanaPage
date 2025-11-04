@@ -49,11 +49,11 @@ statistics: true
 
 [友链 :material-gamepad-variant-outline:](friend.md){ .md-button .md-button--primary }                     [标签 :material-tag-outline:](tags.md){ .md-button }  
 ==近期想要添加的功能==  
-- js鼠标美化
-- 从tags开始的可视化标签云图生成
-- 利用js支撑的博客看板娘计划
-- 修订博客的时间戳问题
-- 丰富字体配置，提升博客美观度
+- js鼠标美化  
+- 从tags开始的可视化标签云图生成  
+- 利用js支撑的博客看板娘计划  
+- 修订博客的时间戳问题  
+- 丰富字体配置，提升博客美观度  
 
 
 
