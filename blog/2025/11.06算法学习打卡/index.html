@@ -53,6 +53,8 @@
     
       <link rel="stylesheet" href="../../../stylesheets/custom.css">
     
+      <link rel="stylesheet" href="https://static.zeoseven.com/zsft/292/main/result.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1219,7 +1221,7 @@
 </div>
 <h2 id="前缀和的求取">前缀和的求取<a class="headerlink" href="#前缀和的求取" title="Permanent link"></a></h2>
 <h4 id="一维前缀和">一维前缀和<a class="headerlink" href="#一维前缀和" title="Permanent link"></a></h4>
-<p>已知有一个数组<code>a[n]</code>，想要更快速地求出数组中某几项的和，我们可以先引入一个数组<code>sum[n+1]</code>，其中第n个元素<code>sum[n]</code>代表了数组<code>a[n]</code>第前==n==项的和  </p>
+<p>已知有一个数组<code>a[n]</code>，想要更快速地求出数组中某几项的和，我们可以先引入一个数组<code>sum[n+1]</code>，其中第n个元素<code>sum[n]</code>代表了数组<code>a[n]</code>第前n项的和  </p>
 <h4 id="二维前缀和">二维前缀和<a class="headerlink" href="#二维前缀和" title="Permanent link"></a></h4>
 <p>有一个二维数组<code>a[n][m]</code>，想要求出其子矩阵的各项元素之和，首先明确：第<code>sum[n][m]</code>个前缀和为<code>sum[n-1][m]+sum[n][m-1]-sum[n-1][m-1]+a[n][m]</code>的结果。  </p>
 <p>现在给出两个坐标<code>x1，y1</code>;<code>x2，y2</code>(其中x1&lt;x2,y1&lt;y2)<br>
@@ -1420,7 +1422,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年11月6日 14:35:04 CST">2025年11月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年11月6日 15:32:56 CST">2025年11月6日</span>
   </span>
 
     
