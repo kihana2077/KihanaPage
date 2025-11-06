@@ -60,7 +60,7 @@ plugins:
       blog_dir: blog/2025/
       blog_toc: true
   - blogging:
-      locale: zh
+      locale: zh_CN
       dirs:
         - blog
       features:
