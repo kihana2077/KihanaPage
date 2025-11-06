@@ -149,6 +149,8 @@ markdown_extensions:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/custom.css
+  - https://static.zeoseven.com/zsft/292/main/result.css
+
 extra_javascript:
   # - javascripts/extra.js
   - javascripts/background.js
