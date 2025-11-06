@@ -9,7 +9,9 @@ theme:
   name: material
   custom_dir: overrides  
   language: zh
-  font: Noto Sans Simplified Chinese
+  font: 
+    text: Noto Sans Simplified Chinese
+    code: fira code
   logo: assets/favicon.ico
   favicon: assets/favicon.ico
   palette:
@@ -149,7 +151,6 @@ markdown_extensions:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/custom.css
-  - https://static.zeoseven.com/zsft/292/main/result.css
 
 extra_javascript:
   # - javascripts/extra.js
