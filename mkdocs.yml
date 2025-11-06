@@ -43,18 +43,18 @@ theme:
 
 plugins:
   - search
-  # - git-revision-date-localized:
-  #     type: date
-  #     timezone: Asia/Shanghai
-  #     locale: zh
-  #     enable_creation_date: true
-  #     custom_format: "%Y-%m-%d %H:%M"
-  #     exclude: 
-  #         - index.md
-  #         - friend.md
-  #         - tags.md
-  #         - toc.md
-  #     strict: true
+  - git-revision-date-localized:
+      type: date
+      timezone: Asia/Shanghai
+      locale: zh
+      enable_creation_date: true
+      custom_format: "%Y-%m-%d %H:%M"
+      exclude: 
+          - index.md
+          - friend.md
+          - tags.md
+          - toc.md
+      strict: true
   - statistics
   - blog: 
       blog_dir: blog/2025/
@@ -67,19 +67,19 @@ plugins:
         tags: {}
       theme:
         name: card
-        time_format: '%Y-%m-%d %H:%M:%S'
-        # meta_time_format: '%Y-%m-%d %H:%M:%S'
+        time_format: '%Y-%m-%d %H:%M'
+        meta_time_format: '%Y-%m-%d %H:%M'
   - tags
-  - document-dates:
-      position: top            # 显示位置：top（标题后） bottom（文档末尾）
-      type: datetime               # 时间类型：date datetime timeago，默认：date
-      exclude:                 # 排除文件列表
-        - temp.md              # 排除指定文件
-        - drafts/*             # 排除 drafts 目录下所有文件，包括子目录
-      locale: zh               # 本地化语言：en zh zh_TW es fr de ar ja ko ru，默认：en
-      date_format: '%Y-%m-%d'  # 日期格式化字符串，例如：%Y年%m月%d日、%b %d, %Y
-      time_format: '%H:%M'  # 时间格式化字符串（仅在 type=datetime 时有效）
-      show_author: true        # 是否显示作者信息，默认：true
+  # - document-dates:
+  #     position: top            # 显示位置：top（标题后） bottom（文档末尾）
+  #     type: datetime               # 时间类型：date datetime timeago，默认：date
+  #     exclude:                 # 排除文件列表
+  #       - temp.md              # 排除指定文件
+  #       - drafts/*             # 排除 drafts 目录下所有文件，包括子目录
+  #     locale: zh               # 本地化语言：en zh zh_TW es fr de ar ja ko ru，默认：en
+  #     date_format: '%Y-%m-%d'  # 日期格式化字符串，例如：%Y年%m月%d日、%b %d, %Y
+  #     time_format: '%H:%M'  # 时间格式化字符串（仅在 type=datetime 时有效）
+  #     show_author: true        # 是否显示作者信息，默认：true
   - glightbox:
       touchNavigation: true
       loop: false
