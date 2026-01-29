@@ -21,7 +21,7 @@ statistics: true
   }
 </script>
 
-![alt text](qianyu_waifu.png)
+![alt text](perika_waifu.png)
 
 ## 欢迎！欢迎！我们欢迎！
 
