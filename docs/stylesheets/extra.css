@@ -331,4 +331,11 @@
   }
 }
 
+/* 定位组件容器 */
+#sakana-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
 

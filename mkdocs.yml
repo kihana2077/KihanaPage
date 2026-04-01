@@ -151,6 +151,7 @@ markdown_extensions:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/custom.css
+  - https://cdn.jsdelivr.net/npm/sakana-widget@latest/lib/sakana.min.css
 
 extra_javascript:
   # - javascripts/extra.js
@@ -158,6 +159,7 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/sakana-widget@latest/lib/sakana.min.js
 # hooks:
 #   - overrides/hooks/reading_time.py
 

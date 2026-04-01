@@ -53,3 +53,18 @@
     })
   </script>
 {% endblock %}
+
+{% extends "base.html" %}
+
+{% block content %}
+  {{ super() }}
+  
+  <div id="sakana-widget"></div>
+
+  <script>
+    // 等待文档加载完成后初始化
+    window.addEventListener('load', () => {
+      new SakanaWidget().mount('#sakana-widget');
+    });
+  </script>
+{% endblock %}
