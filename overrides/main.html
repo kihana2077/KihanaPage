@@ -2,11 +2,8 @@
 
 {% block content %}
   {{ super() }}
-  <!-- Giscus -->
+
   <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
-
-
-  <!-- 这里改成你的Giscus代码 -->
   <script src="https://giscus.app/client.js"
         data-repo="kihana2077/KihanaPage"
         data-repo-id="R_kgDOPigL3A"
@@ -21,58 +18,52 @@
         data-lang="zh-CN"
         crossorigin="anonymous"
         async>
-</script>
-
-
-
-  <!-- Reload on palette change -->
-  <script>
-    var palette = __md_get("__palette")
-    if (palette && typeof palette.color === "object")
-      if (palette.color.scheme === "slate") {
-        var giscus = document.querySelector("script[src*=giscus]")
-        giscus.setAttribute("data-theme", "dark") 
-      }
-
-    /* Register event handlers after documented loaded */
-    document.addEventListener("DOMContentLoaded", function() {
-      var ref = document.querySelector("[data-md-component=palette]")
-      ref.addEventListener("change", function() {
-        var palette = __md_get("__palette")
-        if (palette && typeof palette.color === "object") {
-          var theme = palette.color.scheme === "slate" ? "dark" : "light"
-
-          /* Instruct Giscus to change theme */
-          var frame = document.querySelector(".giscus-frame")
-          frame.contentWindow.postMessage(
-            { giscus: { setConfig: { theme } } },
-            "https://giscus.app"
-          )
-        }
-      })
-    })
   </script>
-{% endblock %}
 
-{% extends "base.html" %}
-
-{% block content %}
-  {{ super() }}
-  
   <div id="sakana-widget"></div>
 
   <script>
-    // 定义一个初始化函数
+    /* 1. Giscus 主题切换逻辑 */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      if (palette.color.scheme === "slate") {
+        var giscus = document.querySelector("script[src*=giscus]")
+        if (giscus) giscus.setAttribute("data-theme", "dark") 
+      }
+    }
+
+    /* 2. Sakana Widget 初始化函数 */
     function initSakana() {
       if (window.SakanaWidget) {
         new SakanaWidget().mount('#sakana-widget');
       } else {
-        // 如果 JS 还没加载完，等半秒再试
+        // 如果资源还没准备好，等 500ms 再试
         setTimeout(initSakana, 500);
       }
     }
-    
-    // 立即尝试运行
-    initSakana();
+
+    /* 3. 页面加载完成后的统一执行 */
+    document.addEventListener("DOMContentLoaded", function() {
+      // 启动 Sakana
+      initSakana();
+
+      // Giscus 调色盘监听（适配暗黑模式切换）
+      var ref = document.querySelector("[data-md-component=palette]")
+      if (ref) {
+        ref.addEventListener("change", function() {
+          var palette = __md_get("__palette")
+          if (palette && typeof palette.color === "object") {
+            var theme = palette.color.scheme === "slate" ? "dark" : "light"
+            var frame = document.querySelector(".giscus-frame")
+            if (frame) {
+              frame.contentWindow.postMessage(
+                { giscus: { setConfig: { theme } } },
+                "https://giscus.app"
+              )
+            }
+          }
+        })
+      }
+    })
   </script>
 {% endblock %}

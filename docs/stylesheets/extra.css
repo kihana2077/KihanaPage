@@ -331,13 +331,11 @@
   }
 }
 
+/* 定位组件容器 */
 #sakana-widget {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 9999 !important; /* 确保层级最高 */
-  width: 200px;
-  height: 200px;
-  border: 2px dashed red; /* 临时加个红框，看能不能看到框 */
+  z-index: 100;
 }
 
