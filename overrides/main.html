@@ -62,9 +62,17 @@
   <div id="sakana-widget"></div>
 
   <script>
-    // 等待文档加载完成后初始化
-    window.addEventListener('load', () => {
-      new SakanaWidget().mount('#sakana-widget');
-    });
+    // 定义一个初始化函数
+    function initSakana() {
+      if (window.SakanaWidget) {
+        new SakanaWidget().mount('#sakana-widget');
+      } else {
+        // 如果 JS 还没加载完，等半秒再试
+        setTimeout(initSakana, 500);
+      }
+    }
+    
+    // 立即尝试运行
+    initSakana();
   </script>
 {% endblock %}
