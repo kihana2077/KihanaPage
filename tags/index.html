@@ -1616,7 +1616,14 @@
     /* 2. Sakana Widget 初始化函数 */
     function initSakana() {
       if (window.SakanaWidget) {
-        new SakanaWidget().mount('#sakana-widget');
+        // --- 在这里修改配置 ---
+        new SakanaWidget({
+          character: 'takina', // 想换回千束就改回 'chisato'
+          size: 200,           // 可以改大小，单位是像素
+          controls: true,      // 显示控制条，这样你可以手动切人物
+          autoFit: false,
+        }).mount('#sakana-widget');
+        // -----------------------
       } else {
         // 如果资源还没准备好，等 500ms 再试
         setTimeout(initSakana, 500);
