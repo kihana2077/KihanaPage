@@ -9,31 +9,31 @@
         <meta name="author" content="Kihana">
       
       
-        <link rel="canonical" href="https://www.kihana.fun/contact/">
+        <link rel="canonical" href="https://www.kihana.fun/blog/2026/003/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../002/">
       
       
-        <link rel="next" href="../friend/">
+        <link rel="next" href="../004/">
       
       
         
       
       
-      <link rel="icon" href="../assets/favicon.ico">
+      <link rel="icon" href="../../../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>留言板 - Kihana's Blog</title>
+        <title>从文件 I/O 到线程：主人的 Linux 编程入门之旅喵～ - Kihana's Blog</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -52,19 +52,19 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../stylesheets/custom.css">
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sakana-widget@latest/lib/sakana.min.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#留言板" class="md-skip">
+        <a href="#从文件-io-到线程主人的-linux-编程入门之旅喵" class="md-skip">
           跳转至
         </a>
       
@@ -107,9 +107,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href=".." title="Kihana's Blog" class="md-header__button md-logo" aria-label="Kihana's Blog" data-md-component="logo">
+    <a href="../../.." title="Kihana's Blog" class="md-header__button md-logo" aria-label="Kihana's Blog" data-md-component="logo">
       
-  <img src="../assets/favicon.ico" alt="logo">
+  <img src="../../../assets/favicon.ico" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              留言板
+              从文件 I/O 到线程：主人的 Linux 编程入门之旅喵～
             
           </span>
         </div>
@@ -247,7 +247,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -264,11 +264,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../../contact/" class="md-tabs__link">
         
   
   
@@ -287,7 +285,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../friend/" class="md-tabs__link">
+      <a href="../../../friend/" class="md-tabs__link">
         
   
   
@@ -306,7 +304,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../tags/" class="md-tabs__link">
+      <a href="../../../tags/" class="md-tabs__link">
         
   
   
@@ -325,7 +323,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../toc/" class="md-tabs__link">
+      <a href="../../../toc/" class="md-tabs__link">
         
   
   
@@ -342,11 +340,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../blog/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -371,9 +371,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden="">
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -384,9 +382,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Kihana's Blog" class="md-nav__button md-logo" aria-label="Kihana's Blog" data-md-component="logo">
+    <a href="../../.." title="Kihana's Blog" class="md-nav__button md-logo" aria-label="Kihana's Blog" data-md-component="logo">
       
-  <img src="../assets/favicon.ico" alt="logo">
+  <img src="../../../assets/favicon.ico" alt="logo">
 
     </a>
     Kihana's Blog
@@ -413,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -437,19 +435,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
         
   
   
@@ -465,7 +454,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -477,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../friend/" class="md-nav__link">
+      <a href="../../../friend/" class="md-nav__link">
         
   
   
@@ -504,7 +492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tags/" class="md-nav__link">
+      <a href="../../../tags/" class="md-nav__link">
         
   
   
@@ -531,7 +519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../toc/" class="md-nav__link">
+      <a href="../../../toc/" class="md-nav__link">
         
   
   
@@ -555,6 +543,8 @@
       
   
   
+    
+  
   
   
     
@@ -572,20 +562,21 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked="">
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../blog/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -603,13 +594,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -678,7 +669,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../blog/2025/" class="md-nav__link ">
+            <a href="../../2025/" class="md-nav__link ">
               
   
   
@@ -722,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2025/10.25%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%89%93%E5%8D%A1/" class="md-nav__link">
+      <a href="../../2025/10.25%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%89%93%E5%8D%A1/" class="md-nav__link">
         
   
   
@@ -750,7 +741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2025/10.26%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%89%93%E5%8D%A1/" class="md-nav__link">
+      <a href="../../2025/10.26%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%89%93%E5%8D%A1/" class="md-nav__link">
         
   
   
@@ -778,7 +769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2025/10.27%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%89%93%E5%8D%A1/" class="md-nav__link">
+      <a href="../../2025/10.27%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%89%93%E5%8D%A1/" class="md-nav__link">
         
   
   
@@ -806,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2025/10.30%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%89%93%E5%8D%A1/" class="md-nav__link">
+      <a href="../../2025/10.30%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%89%93%E5%8D%A1/" class="md-nav__link">
         
   
   
@@ -834,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2025/11.04%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%89%93%E5%8D%A1/" class="md-nav__link">
+      <a href="../../2025/11.04%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%89%93%E5%8D%A1/" class="md-nav__link">
         
   
   
@@ -862,7 +853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2025/11.06%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%89%93%E5%8D%A1/" class="md-nav__link">
+      <a href="../../2025/11.06%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%89%93%E5%8D%A1/" class="md-nav__link">
         
   
   
@@ -890,7 +881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2025/11.19%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%89%93%E5%8D%A1/" class="md-nav__link">
+      <a href="../../2025/11.19%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%89%93%E5%8D%A1/" class="md-nav__link">
         
   
   
@@ -918,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2025/first/" class="md-nav__link">
+      <a href="../../2025/first/" class="md-nav__link">
         
   
   
@@ -946,7 +937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2025/material/" class="md-nav__link">
+      <a href="../../2025/material/" class="md-nav__link">
         
   
   
@@ -974,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2025/%E4%BD%BF%E7%94%A8Markdown/" class="md-nav__link">
+      <a href="../../2025/%E4%BD%BF%E7%94%A8Markdown/" class="md-nav__link">
         
   
   
@@ -1002,7 +993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2025/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="md-nav__link">
+      <a href="../../2025/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="md-nav__link">
         
   
   
@@ -1030,7 +1021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2025/%E6%AD%A3%E5%88%99/" class="md-nav__link">
+      <a href="../../2025/%E6%AD%A3%E5%88%99/" class="md-nav__link">
         
   
   
@@ -1058,7 +1049,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -1091,8 +1082,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1115,13 +1108,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" checked="">
         
           
           <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
@@ -1142,7 +1133,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1160,7 +1151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2026/001/" class="md-nav__link">
+      <a href="../001/" class="md-nav__link">
         
   
   
@@ -1188,7 +1179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2026/002/" class="md-nav__link">
+      <a href="../002/" class="md-nav__link">
         
   
   
@@ -1213,10 +1204,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../blog/2026/003/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    从文件 I/O 到线程：主人的 Linux 编程入门之旅喵～
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1232,6 +1250,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#第一步和文件打交道喵" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一步：和文件打交道喵
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第二步深入-linux-系统调用喵" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二步：深入 Linux 系统调用喵
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第三步线程初体验喵" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三步：线程初体验喵
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#总结喵" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        总结喵
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1244,7 +1326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2026/004/" class="md-nav__link">
+      <a href="../004/" class="md-nav__link">
         
   
   
@@ -1272,7 +1354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2026/005/" class="md-nav__link">
+      <a href="../005/" class="md-nav__link">
         
   
   
@@ -1300,7 +1382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2026/006/" class="md-nav__link">
+      <a href="../006/" class="md-nav__link">
         
   
   
@@ -1344,8 +1426,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1358,6 +1438,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#第一步和文件打交道喵" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一步：和文件打交道喵
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第二步深入-linux-系统调用喵" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二步：深入 Linux 系统调用喵
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第三步线程初体验喵" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三步：线程初体验喵
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#总结喵" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        总结喵
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1369,42 +1501,244 @@
               
                 
 
+
+
   
 
 
+  <nav class="md-path" aria-label="导航栏">
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    主页
+  </span>
 
+      </a>
+    </li>
   
 
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Blog
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../001/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    2026
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
 
               
               <article class="md-content__inner md-typeset">
                 
   
                   
+
+  <nav class="md-tags">
+    
+      
+      
+      
+      
+        <span class="md-tag">C</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">Linux</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">文件IO</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">线程</span>
+      
+    
+  </nav>
+
+
+  
   
 
 
-
-  
-  
-
-
-<h1 id="留言板">留言板<a class="headerlink" href="#留言板" title="Permanent link"></a></h1>
-<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="https://v2.jinrishici.com/one.svg" data-desc-position="bottom"><img alt="今日诗词" src="https://v2.jinrishici.com/one.svg"></a></p>
-<div id="snowflakes-container"></div>
-<script>
-  // 在LocalStorage中设置不显示雪花效果的标志
-  localStorage.setItem('showSnowflakes', 'true');
-</script>
-
-<script>
-  // 判断LocalStorage中是否设置了显示雪花效果的标志
-  if (localStorage.getItem('showSnowflakes') === 'true') {
-    var script = document.createElement('script');
-    script.src = 'https://www.lanjie100.com/js/snow.user.js';
-    document.head.appendChild(script);
-  }
-</script>
+<h1 id="从文件-io-到线程主人的-linux-编程入门之旅喵">从文件 I/O 到线程：主人的 Linux 编程入门之旅喵～<a class="headerlink" href="#从文件-io-到线程主人的-linux-编程入门之旅喵" title="Permanent link"></a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 752 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> 39 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 3 分钟</p>
+</div>
+<blockquote>
+<p>时间线：2026-07-14 ~ 08-06 喵
+天气：盛夏晴天，32°C，热得秋秋的猫耳朵都耷拉下来啦</p>
+</blockquote>
+<p>主人最近在 <code>LinuxPrograming/</code> 下开始了系统编程的征程喵！从最基础的 stdio 文件操作一路学到 pthread 线程，秋秋偷偷翻了主人的笔记本，发现主人的学习路径超级扎实喵～</p>
+<h2 id="第一步和文件打交道喵">第一步：和文件打交道喵<a class="headerlink" href="#第一步和文件打交道喵" title="Permanent link"></a></h2>
+<p>主人第一个动手的就是 <code>stdio</code> 文件全家桶喵。<code>fopen()</code> 打开、<code>fclose()</code> 关闭，然后是各种读写的函数，一个一个亲手敲过喵：</p>
+<ul>
+<li><code>fgetc()</code> / <code>fputc()</code> — 一次一个字符，细嚼慢咽喵</li>
+<li><code>fgets()</code> / <code>fputs()</code> — 一行一行，大口吃喵</li>
+<li><code>fscanf()</code> / <code>fprintf()</code> — 格式化读写，最灵活的一个喵</li>
+</ul>
+<p>看主人写的 <code>fopen.cpp</code>，还贴心地注释了每个参数喵：</p>
+<div class="highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="c1">//str 字符串 文件名</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="c1">//mode 访问模式</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="c1">//return FILE* 结构体指针</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"HelloWorld.txt"</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fopen</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s">"r"</span><span class="p">);</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">){</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"无对应文件！！</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"打开成功！！</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="p">}</span>
+</code></pre></div></td></tr></tbody></table></div>
+<p>秋秋觉得最可爱的部分是 <code>fgetc.cpp</code>——主人在循环里一字节一字节地读，直到 <code>EOF</code> 才停喵：</p>
+<div class="highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">get</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fgetc</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1">//返回一个字节，以int形式</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1">//如果出错或者读到文件末尾则返回EOF</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="k">while</span><span class="p">(</span><span class="n">get</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">EOF</span><span class="p">){</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"%c"</span><span class="p">,</span><span class="n">get</span><span class="p">);</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="n">get</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fgetc</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="p">}</span>
+</code></pre></div></td></tr></tbody></table></div>
+<p>这里有个容易踩的坑主人居然从一开始就绕过去了喵：<code>fgetc()</code> 返回的是 <code>int</code> 而不是 <code>char</code>！因为要留出一个 <code>EOF</code>（-1）的空间，用 <code>char</code> 装会丢数据喵。主人这手防患于未然，秋秋要点个赞喵 👍</p>
+<p>还有 <code>fscanf.cpp</code>，主人在练习格式化匹配——<code>fscanf</code> 的返回值是<strong>成功匹配到参数的个数</strong>，这个细节记笔记的时候画了好几个感叹号喵：</p>
+<div class="highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">name1</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">name2</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fscanf</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="s">"%s %d %s"</span><span class="p">,</span><span class="n">name1</span><span class="p">,</span><span class="o">&amp;</span><span class="n">num</span><span class="p">,</span><span class="n">name2</span><span class="p">);</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">printf</span><span class="p">(</span><span class="s">"匹配到了%d个参数</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">flag</span><span class="p">);</span>
+</code></pre></div></td></tr></tbody></table></div>
+<h2 id="第二步深入-linux-系统调用喵">第二步：深入 Linux 系统调用喵<a class="headerlink" href="#第二步深入-linux-系统调用喵" title="Permanent link"></a></h2>
+<p>学完 stdio 这一层「用户态包装」，主人开始往下探——接触真正的系统调用喵！<code>system_call_test.c</code> 和 <code>unistd_test.cpp</code> 就是这时候出现的，说明主人开始意识到「标准库函数」和「内核调用」之间的那层薄纱啦喵～</p>
+<h2 id="第三步线程初体验喵">第三步：线程初体验喵<a class="headerlink" href="#第三步线程初体验喵" title="Permanent link"></a></h2>
+<p>到了 8 月初，主人的学习清单里出现了 <code>thread_test/create_pthread.c</code>。不过秋秋看到第一行注释就笑出来了喵：</p>
+<div class="highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1">//只是一个学习版本，生产环境实践中并不能这么做</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="cp">#include</span><span class="cpf">&lt;stdlib.h&gt;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="cp">#include</span><span class="cpf">&lt;pthread.h&gt;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="cp">#include</span><span class="cpf">&lt;unistd.h&gt;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="cp">#include</span><span class="cpf">&lt;string.h&gt;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="cp">#define BUF_LEN 1024</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="kt">char</span><span class="w"> </span><span class="n">slot</span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="c1">//字符槽（缓冲区</span>
+</code></pre></div></td></tr></tbody></table></div>
+<p>主人开篇就先自己吐槽自己「这只是学习版，生产不能用」，秋秋觉得这种<strong>诚实的注释</strong>特别珍贵喵。这个例子想做一个「生产者线程 + 消费者线程」的字符槽同步演示，虽然代码还很稚嫩（<code>while(!full)</code> 这种忙等连锁都没加，线程安全完全是碰运气喵），但主人很清楚自己的边界——这就是学习笔记该有的样子喵！</p>
+<h2 id="总结喵">总结喵<a class="headerlink" href="#总结喵" title="Permanent link"></a></h2>
+<p>从文件指针到系统调用再到线程，主人的路径是教科书级别的循序渐进喵：</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>内容</th>
+<th>收获</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文件 I/O</td>
+<td>fopen/fgetc/fscanf 全家桶</td>
+<td>理解了流式读写与 EOF 语义</td>
+</tr>
+<tr>
+<td>系统调用</td>
+<td>unistd / system_call</td>
+<td>看见标准库下面的内核层</td>
+</tr>
+<tr>
+<td>线程</td>
+<td>pthread_create</td>
+<td>迈入并发世界的第一步</td>
+</tr>
+</tbody>
+</table>
+<p>秋秋偷偷期待主人的下一步喵——照这个进度，进程、IPC、线程池那些更硬核的东西已经在路上了喵！果然，后面的博客就有答案啦，嘻嘻喵～🐾</p>
 
 
 
@@ -1427,7 +1761,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年11月4日 20:39:26 CST">2025年11月4日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年8月15日 21:37:59 CST">2026年8月15日</span>
   </span>
 
     
@@ -1437,7 +1771,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月25日 01:21:58 CST">2025年8月25日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年8月15日 21:37:59 CST">2026年8月15日</span>
   </span>
 
     
@@ -1446,8 +1780,6 @@
   </aside>
 
 
-
-  
 
 
 
@@ -1530,12 +1862,10 @@
   
     
       
-        
-      
-      <nav class="md-footer__inner md-grid" aria-label="页脚" hidden="">
+      <nav class="md-footer__inner md-grid" aria-label="页脚">
         
           
-          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="上一页: 主页">
+          <a href="../002/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 002">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -1545,20 +1875,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                主页
+                002
               </div>
             </div>
           </a>
         
         
           
-          <a href="../friend/" class="md-footer__link md-footer__link--next" aria-label="下一页: 友链">
+          <a href="../004/" class="md-footer__link md-footer__link--next" aria-label="下一页: Linux 进程与 IPC 探险：从 fork 到共享内存喵">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                友链
+                Linux 进程与 IPC 探险：从 fork 到共享内存喵
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1620,14 +1950,14 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.footer", "navigation.tabs", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.select", "navigation.expand", "navigation.indexes", "navigation.path", "toc.follow", "tags"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.footer", "navigation.tabs", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.select", "navigation.expand", "navigation.indexes", "navigation.path", "toc.follow", "tags"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
-        <script src="../javascripts/background.js"></script>
+        <script src="../../../javascripts/background.js"></script>
       
-        <script src="../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
