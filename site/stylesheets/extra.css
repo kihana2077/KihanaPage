@@ -13,24 +13,12 @@
   --admonition-border-left-width: 0.2rem;
   --base-border-radius: 0.5rem;
 }
-/* Change font family of filename present on top of code block. */
-/* .highlight span.filename {
-  border-bottom: none;
+/* 代码块圆角:与按钮/卡片/表格一致,取值来自 --base-border-radius(默认 0.5rem) */
+.md-typeset .highlight {
   border-radius: var(--base-border-radius);
-  display: inline;
-  font-family: var(--md-code-font-family);
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  margin-bottom: 5px;
-  text-align: center;
+  /* 让顶部语言标题条、行号列、代码区统一按外框圆角裁剪 */
+  overflow: hidden;
 }
-.highlight span.filename + pre > code {
-  border-radius: var(--base-border-radius);
-  border-top-left-radius: 0;
-}
-.md-typeset pre > code {
-  border-radius: var(--base-border-radius);
-} */
 
 /* Customize admonition layout */
 /* .md-typeset .admonition {
@@ -331,4 +319,13 @@
   }
 }
 
+/* 定位组件容器 */
+#sakana-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 200px;
+  height: 200px;
+}
 
