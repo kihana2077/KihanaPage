@@ -10,7 +10,7 @@ theme:
   custom_dir: overrides  
   language: zh
   font: 
-    text: Noto Sans Simplified Chinese
+    text: Noto Sans SC
     code: JetBrains Mono
   logo: assets/favicon.ico
   favicon: assets/favicon.ico
@@ -36,6 +36,9 @@ theme:
     - navigation.tracking
     - content.code.copy
     - content.code.select
+    - search.suggest
+    - search.highlight
+    - search.share
     - navigation.expand
     - navigation.indexes
     - navigation.path
@@ -58,20 +61,22 @@ plugins:
           - toc.md
       strict: true
   - statistics
-  - blog: 
-      blog_dir: blog/2025/
-      blog_toc: true
   - blogging:
       locale: zh_CN
       dirs:
         - blog
+      sort:
+        from: new
+        by: creation
+      size: 10
+      show_total: false
+      time_format: '%Y-%m-%d'
       features:
-        tags: {}
-      theme:
-        name: card
-        time_format: '%Y-%m-%d %H:%M'
-        # meta_time_format: '%Y-%m-%d %H:%M'
-  - tags
+        tags:
+          index_page: tags.md
+      template: overrides/blog-card.html
+  - tags:
+      tags: false
   # - document-dates:
   #     position: top            # 显示位置：top（标题后） bottom（文档末尾）
   #     type: datetime               # 时间类型：date datetime timeago，默认：date
@@ -151,20 +156,21 @@ markdown_extensions:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/custom.css
+  - stylesheets/theme.css
   - https://cdn.jsdelivr.net/npm/sakana-widget@latest/lib/sakana.min.css
 
 extra_javascript:
   # - javascripts/extra.js
-  - javascripts/background.js
-  - javascripts/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - javascript/background.js
+  - javascript/mathjax.js
+  - javascript/extras.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://cdn.jsdelivr.net/npm/sakana-widget@latest/lib/sakana.min.js
-# hooks:
-#   - overrides/hooks/reading_time.py
+hooks:
+  - overrides/hooks/rss.py
 
 
-copyright: Copyright © 2025 Kihana <a href="https://icp.gov.moe/?keyword=20250772" target="_blank">萌ICP备20250772号</a>  
+copyright: Copyright © 2025–2026 Kihana <a href="https://icp.gov.moe/?keyword=20250772" target="_blank" rel="noopener">萌ICP备20250772号</a>
 
 
 extra: 
@@ -180,6 +186,6 @@ extra:
     - icon: fontawesome/brands/github 
       link: https://github.com/kihana2077
       name: Github 
-    - icon: fontawesome/brands/bilibili
-      link: about:blank
-      name: bilibili
+    - icon: fontawesome/solid/rss
+      link: https://blog.kihana.asia/feed.xml
+      name: RSS 订阅

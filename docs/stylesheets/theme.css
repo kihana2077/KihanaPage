@@ -1,0 +1,177 @@
+/* Keep the original soft sky-blue palette. */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #6876c2;
+  --md-accent-fg-color: #5879b9;
+  --md-default-bg-color: #dce2f1;
+  --md-default-fg-color: #27304b;
+  --card-surface: #fff;
+  --card-border: #dde1f1;
+}
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #6876c2;
+  --md-accent-fg-color: #a8b6ff;
+  --md-default-bg-color: #121212;
+  --md-default-fg-color: #edf0ff;
+  --card-surface: #22283b;
+  --card-border: #39415d;
+}
+body, button, input { font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif; }
+.md-typeset code, .md-typeset pre { font-family: "JetBrains Mono", "Cascadia Code", monospace; }
+.md-typeset h1, .md-typeset h2 { letter-spacing: .015em; }
+.md-typeset .admonition.abstract {
+  background: var(--card-surface);
+  border-color: var(--md-primary-fg-color);
+}
+.md-typeset img { border-radius: var(--base-border-radius); }
+
+.md-typeset .blog-list-card {
+  display: block;
+  margin: .85rem 0;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--card-border);
+  border-radius: .8rem;
+  background: var(--card-surface);
+  box-shadow: 0 .2rem .7rem rgba(29, 37, 83, .05);
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+}
+.md-typeset .blog-list-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 .5rem 1.2rem rgba(29, 37, 83, .13);
+}
+.md-typeset .blog-list-card h3 { margin: .35rem 0 .45rem; color: var(--md-primary-fg-color); }
+.blog-list-card__date { font-size: .72rem; opacity: .7; }
+.blog-list-card__body p { margin: .4rem 0; font-size: .82rem; }
+.blog-list-card__tags { display: flex; flex-wrap: wrap; gap: .4rem; font-size: .68rem; opacity: .8; }
+
+.profile-card {
+  padding: 1rem;
+  margin: .6rem .6rem 1.4rem;
+  border: 1px solid var(--card-border);
+  border-radius: .85rem;
+  background: var(--card-surface);
+  box-shadow: 0 .35rem 1.2rem rgba(29, 37, 83, .08);
+  text-align: center;
+  color: var(--md-default-fg-color);
+}
+.profile-card__avatar {
+  display: block;
+  width: 4.2rem;
+  height: 4.2rem;
+  margin: 0 auto .55rem;
+  border: 3px solid var(--card-border);
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile-card__name { font-size: 1.1rem; font-weight: 700; }
+.profile-card__intro { margin: .45rem 0 .8rem; font-size: .7rem; line-height: 1.6; }
+.profile-card__links, .profile-card__actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .35rem;
+}
+.profile-card__actions { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: .6rem; }
+.profile-card__links a, .profile-card__actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  padding: .25rem .2rem;
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--md-primary-fg-color);
+  font-size: .62rem;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+}
+.profile-card__actions button { width: 100%; }
+.profile-card__actions .snow-toggle { white-space: nowrap; }
+.profile-card__actions .snow-toggle[aria-pressed="true"] {
+  background: var(--md-primary-fg-color);
+  color: #fff;
+}
+.article-tags { display: flex; flex-wrap: wrap; gap: .45rem; align-items: center; margin: 1.4rem 0; }
+.article-tags strong { width: 100%; font-size: .75rem; }
+.article-tags a { padding: .25rem .55rem; border: 1px solid var(--card-border); border-radius: 999px; font-size: .7rem; }
+.article-tags a:hover { background: var(--md-primary-fg-color); color: #fff; }
+.profile-card__links a:hover, .profile-card__actions button:hover {
+  background: var(--md-primary-fg-color);
+  color: #fff;
+}
+.profile-card__actions button:focus-visible, .profile-card__links a:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
+}
+.profile-card-mobile { display: none; }
+.md-sidebar--primary .profile-card { display: none; }
+
+/* The blogging plugin supplies the tag links; JS adds frequency weights. */
+.md-typeset .blogging-tags-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem .7rem;
+  padding: 1.1rem;
+  border: 1px solid var(--card-border);
+  border-radius: .85rem;
+  background: var(--card-surface);
+}
+.md-typeset .blogging-tags-grid .blogging-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: .2rem .35rem;
+  border-radius: .35rem;
+  color: var(--md-primary-fg-color);
+  font-size: calc(.75rem + var(--tag-weight, 0) * .17rem);
+  line-height: 1.3;
+  text-decoration: none;
+  transition: background-color .2s, transform .2s;
+}
+.md-typeset .blogging-tags-grid .blogging-tag code {
+  padding: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+}
+.md-typeset .blogging-tags-grid .blogging-tag:hover,
+.md-typeset .blogging-tags-grid .blogging-tag:focus-visible {
+  background: var(--card-border);
+  transform: translateY(-2px);
+}
+
+/* Material renders titled/numbered code as a table inside .highlight. */
+.md-typeset .highlight,
+.md-typeset .highlight > .highlighttable,
+.md-typeset .highlight > pre {
+  border-radius: var(--base-border-radius);
+}
+.md-typeset .highlight { overflow: hidden; }
+.md-typeset .highlight > .highlighttable { overflow: hidden; border-collapse: separate; border-spacing: 0; }
+.md-typeset .highlight > .highlighttable pre { border-radius: 0; }
+
+#sakana-widget { width: 150px; height: 150px; bottom: 12px; right: 12px; }
+#snow-canvas { position: fixed; inset: 0; z-index: 6; pointer-events: none; }
+#snow-canvas[hidden] { display: none; }
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  width: 100%;
+  height: 3px;
+  background: var(--md-accent-fg-color);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+@media screen and (max-width: 76.1875em) {
+  .profile-card-mobile { display: block; }
+  .profile-card-mobile .profile-card { margin: .8rem 0 1.4rem; }
+}
+@media screen and (max-width: 44.984375em) { #sakana-widget { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .md-button, .profile-card__links a, .profile-card__actions button { transition: none; }
+}

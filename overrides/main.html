@@ -1,8 +1,25 @@
 {% extends "base.html" %}
 
+{% block extrahead %}
+  <link rel="alternate" type="application/rss+xml" title="Kihana's Blog" href="{{ 'feed.xml' | url }}">
+{% endblock %}
+
 {% block content %}
+  {% if page and page.url.startswith('blog/') and page.url.count('/') >= 3 %}
+    <div class="profile-card-mobile">{% include "partials/profile-card.html" %}</div>
+  {% endif %}
   {{ super() }}
 
+  {% if page and page.meta and page.meta.tags and page.url.startswith('blog/') %}
+    <nav class="article-tags" aria-label="文章标签">
+      <strong>按标签继续阅读</strong>
+      {% for tag in page.meta.tags %}
+        <a href="{{ 'tags/' | url }}#{{ tag | urlencode }}">#{{ tag }}</a>
+      {% endfor %}
+    </nav>
+  {% endif %}
+
+  {% if page and (not page.meta or page.meta.giscus != false) %}
   <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
   <script src="https://giscus.app/client.js"
         data-repo="kihana2077/KihanaPage"
@@ -19,6 +36,7 @@
         crossorigin="anonymous"
         async>
   </script>
+  {% endif %}
 
   <div id="sakana-widget"></div>
 
@@ -38,16 +56,17 @@
         // --- 在这里修改配置 ---
         new SakanaWidget({
           character: 'takina', // 想换回千束就改回 'chisato'
-          size: 200,           // 可以改大小，单位是像素
+          size: 150,
           controls: true,      // 显示控制条，这样你可以手动切人物
           autoFit: false,
         }).mount('#sakana-widget');
         // -----------------------
       } else {
         // 如果资源还没准备好，等 500ms 再试
-        setTimeout(initSakana, 500);
+        if (initSakana.attempts++ < 10) setTimeout(initSakana, 500);
       }
     }
+    initSakana.attempts = 0;
 
     /* 3. 页面加载完成后的统一执行 */
     document.addEventListener("DOMContentLoaded", function() {

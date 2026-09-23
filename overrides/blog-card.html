@@ -1,0 +1,17 @@
+{% extends "blog.html" %}
+
+{% macro render_blog(title, description, time, url, pg) -%}
+<a class="blog-list-card" href="/{{ pg.url }}">
+  <article class="blog-list-card__body">
+    <span class="blog-list-card__date">发布于 {{ time }}</span>
+    <h3>{{ title }}</h3>
+    {% if description %}<p>{{ description }}</p>{% endif %}
+    {% if show_tags and "tags" in pg.meta %}
+      <div class="blog-list-card__tags">
+        {% for tag in pg.meta["tags"] %}<span>#{{ tag }}</span>{% endfor %}
+      </div>
+    {% endif %}
+  </article>
+</a>
+{{ caller() }}
+{%- endmacro %}

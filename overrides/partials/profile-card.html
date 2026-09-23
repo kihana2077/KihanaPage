@@ -1,0 +1,14 @@
+<section class="profile-card" aria-label="关于博主">
+  <img class="profile-card__avatar" src="{{ 'assets/ayachi.jpg' | url }}" alt="Kihana 的头像" loading="lazy">
+  <div class="profile-card__name">Kihana</div>
+  <p class="profile-card__intro">拾起日常的微光，写给山海，也写给未完的远方。</p>
+  <div class="profile-card__links">
+    <a href="{{ 'blog/' | url }}">文章</a>
+    <a href="{{ 'tags/' | url }}">标签</a>
+    <a href="https://github.com/kihana2077" target="_blank" rel="noopener">GitHub</a>
+  </div>
+  <div class="profile-card__actions">
+    <button type="button" class="random-post" data-index="{{ 'search/search_index.json' | url }}">随机一篇</button>
+    <button type="button" class="snow-toggle" aria-pressed="false" aria-label="开启页面动态效果">✨ 动态关</button>
+  </div>
+</section>

@@ -1,0 +1,4 @@
+.preview-site/
+backups/
+__pycache__/
+*.pyc

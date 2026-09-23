@@ -6,22 +6,7 @@ giscus: false
 glightbox: false
 statistics: true
 ---
-<div id="snowflakes-container"></div>
-<script>
-  // 在LocalStorage中设置不显示雪花效果的标志
-  localStorage.setItem('showSnowflakes', 'true');
-</script>
-
-<script>
-  // 判断LocalStorage中是否设置了显示雪花效果的标志
-  if (localStorage.getItem('showSnowflakes') === 'true') {
-    var script = document.createElement('script');
-    script.src = 'https://www.lanjie100.com/js/snow.user.js';
-    document.head.appendChild(script);
-  }
-</script>
-
-![alt text](waifu_kamome.png)
+![欢迎来到 Kihana 的博客](waifu_kamome.png)
 
 ## 欢迎！欢迎！我们欢迎！
 
@@ -34,11 +19,11 @@ statistics: true
     感谢您的浏览
 
 ## 重复访问者计数
-![www.kihana.fun](https://count.getloli.com/@www.kihana.fun?name=www.kihana.fun&theme=yousa-ling&padding=6&offset=0&align=top&scale=1&pixelated=1&darkmode=auto)  
+![博客访问计数](https://count.getloli.com/@blog.kihana.asia?name=blog.kihana.asia&theme=yousa-ling&padding=6&offset=0&align=top&scale=1&pixelated=1&darkmode=auto)
 
 ### 本站共有 {{ pages }} 个页面，{{ words }} 个字，{{ images }} 张图片
 ## 关于我  
-![alt text](<card.png>)
+![Kihana 的个人名片](<card.png>)
 
 - 计算机类本科生在读
 - 目前主修方向是摸鱼
@@ -48,7 +33,7 @@ statistics: true
 - 折腾了很长时间个人博客的笨蛋
 - 喜欢宅的家里蹲
 
-[友链 :material-gamepad-variant-outline:](friend.md){ .md-button .md-button--primary }                     [标签 :material-tag-outline:](tags.md){ .md-button }  
+[阅读文章 :material-book-open-page-variant:](blog/index.md){ .md-button .md-button--primary } [标签 :material-tag-outline:](tags.md){ .md-button } [友链 :material-gamepad-variant-outline:](friend.md){ .md-button }
 
 <!-- ==近期想要添加的功能==  
 
