@@ -1458,14 +1458,14 @@
   
 
 
-<h1 id="从阻塞-socket-到-selectpollepollio-多路复用">从阻塞 socket 到 select/poll/epoll:I/O 多路复用<a class="headerlink" href="#从阻塞-socket-到-selectpollepollio-多路复用" title="Permanent link"></a></h1>
+<h1 id="从阻塞-socket-到-selectpollepollio-多路复用">从阻塞 socket 到 select/poll/epoll:I/O 多路复用<a class="headerlink" href="#从阻塞-socket-到-selectpollepollio-多路复用" title="Permanent link">#</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 969 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 53 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 4 分钟</p>
 </div>
 <p>接上一篇的阻塞式 socket(008),这周把 I/O 多路复用的三种方式都手写了一遍——<code>select</code>、<code>poll</code>、<code>epoll</code>,最后还用非阻塞客户端做了压测。</p>
-<h2 id="为什么需要多路复用">为什么需要多路复用<a class="headerlink" href="#为什么需要多路复用" title="Permanent link"></a></h2>
+<h2 id="为什么需要多路复用">为什么需要多路复用<a class="headerlink" href="#为什么需要多路复用" title="Permanent link">#</a></h2>
 <p>阻塞 <code>recv</code> 一次只能盯住一个连接;1 连接 1 线程在连接数上来之后不现实。多路复用的思路是一个线程同时盯住大量 fd,有事件了再处理。<code>socket_test/</code> 里三个版本刚好是这条演进的完整轨迹。</p>
-<h2 id="select">select<a class="headerlink" href="#select" title="Permanent link"></a></h2>
+<h2 id="select">select<a class="headerlink" href="#select" title="Permanent link">#</a></h2>
 <p><code>tcp_select_server_v1.c</code>。核心是三套 <code>fd_set</code> 位图(<code>FD_SET</code> / <code>FD_ZERO</code> / <code>FD_ISSET</code>):</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
@@ -1480,7 +1480,7 @@
 <span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">readfds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">master_read</span><span class="p">;</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">writefds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">master_write</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="poll">poll<a class="headerlink" href="#poll" title="Permanent link"></a></h2>
+<h2 id="poll">poll<a class="headerlink" href="#poll" title="Permanent link">#</a></h2>
 <p><code>tcp_poll_server_v1.c</code>。把位图换成 <code>struct pollfd</code> 数组,没有 1024 的上限,事件用 <code>POLLIN</code> / <code>POLLOUT</code> / <code>POLLHUP</code> 表达。但同样每次都要把整个数组传给内核、遍历所有 fd:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
@@ -1514,7 +1514,7 @@
 <a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>这一步开始,服务器和客户端 fd 都设成非阻塞(<code>fcntl(fd, F_SETFL, O_NONBLOCK)</code>),<code>recv</code> / <code>send</code> 遇到 <code>EAGAIN</code> / <code>EWOULDBLOCK</code> 就下次再试——不能像阻塞版那样直接在系统调用里等。</p>
-<h2 id="epoll">epoll<a class="headerlink" href="#epoll" title="Permanent link"></a></h2>
+<h2 id="epoll">epoll<a class="headerlink" href="#epoll" title="Permanent link">#</a></h2>
 <p><code>tcp_epoll_server_v2.c</code> 是这轮的最终形态。epoll 把维护工作交给内核:只用 <code>epoll_ctl</code> 注册一次,内核维护就绪链表,<code>epoll_wait</code> 只返回真正就绪的 fd,复杂度 O(就绪连接数)而不是 O(总连接数)。</p>
 <p>每个连接用 <code>epoll_event.data.ptr</code> 挂一个 <code>Client</code> 结构(收发缓冲、偏移、是否关闭):</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
@@ -1587,14 +1587,14 @@
 <li>规模也放开了:<code>MAX_CONNECTIONS</code> 16384、<code>MAX_EVENTS</code> 8192、<code>LISTEN_BACKLOG</code> 8192,对比 select 版的 10,该换就换</li>
 </ul>
 <p>还有两处注释写着「尚未实现」:连接数超上限时的<strong>背压</strong>(目前是直接 close 掉),以及<strong>超长消息</strong>的处理(目前是报错断开而不是回退)。这两个尾巴留着下一步补。</p>
-<h2 id="压测客户端">压测客户端<a class="headerlink" href="#压测客户端" title="Permanent link"></a></h2>
+<h2 id="压测客户端">压测客户端<a class="headerlink" href="#压测客户端" title="Permanent link">#</a></h2>
 <p><code>stress_test_client.c</code> 是个非阻塞的多客户端压测工具:用 <code>poll</code> 同时管理几百个连接(默认 256 个客户端),每个连接发多条请求,并且<strong>校验回显的完整性</strong>——发完 <code>send_buf</code> 后,<code>recv</code> 的数据要按 <code>'\n'</code> 找边界、和发出内容 <code>memcmp</code> 完全对上才算一次请求完成,同时记录每请求延迟、算 QPS。Ctrl-C 能优雅退出并打印汇总。</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1">// 每个 client 是个小状态机</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">CLIENT_CONNECTING</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">CLIENT_WRITING</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">CLIENT_READING</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">CLIENT_DONE</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">CLIENT_FAILED</span>
 </code></pre></div></td></tr></table></div>
 <p>自己写压测工具的好处是能验证正确性、拿到延迟分布,不用再单开一堆命令行进程手数 QPS。</p>
-<h2 id="收获和没做完的">收获和没做完的<a class="headerlink" href="#收获和没做完的" title="Permanent link"></a></h2>
+<h2 id="收获和没做完的">收获和没做完的<a class="headerlink" href="#收获和没做完的" title="Permanent link">#</a></h2>
 <ul>
 <li>select/poll/epoll 是<strong>演进不是替代</strong>:连接少时前两者足够,连接多、大部分空闲时 epoll 的优势才明显</li>
 <li>非阻塞 + 事件循环的复杂度确实比阻塞高不少——每个连接都是个小状态机,数据收发、缓存的每一环都要自己兜</li>

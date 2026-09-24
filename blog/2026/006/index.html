@@ -1442,13 +1442,13 @@
   
 
 
-<h1 id="纯-c-手搓网络线程池峰值-39-万-reqs">纯 C 手搓网络线程池,峰值 39 万 req/s<a class="headerlink" href="#纯-c-手搓网络线程池峰值-39-万-reqs" title="Permanent link"></a></h1>
+<h1 id="纯-c-手搓网络线程池峰值-39-万-reqs">纯 C 手搓网络线程池,峰值 39 万 req/s<a class="headerlink" href="#纯-c-手搓网络线程池峰值-39-万-reqs" title="Permanent link">#</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 681 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 35 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 3 分钟</p>
 </div>
 <p><code>net_threadpool</code> 是纯 C + 纯 POSIX(pthread + Berkeley Socket)实现的网络线程池服务器,外加一套多线程基准测试工具。没有第三方依赖,<code>gcc</code> 一条命令就能编译。</p>
 <p>写完不只是跑通,还认真跑了一组「池线程数 × 客户端并发」的 benchmark 矩阵(每客户端 5000 请求,预热 10)。</p>
-<h2 id="架构">架构<a class="headerlink" href="#架构" title="Permanent link"></a></h2>
+<h2 id="架构">架构<a class="headerlink" href="#架构" title="Permanent link">#</a></h2>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -1474,7 +1474,7 @@
 <a id="__codelineno-0-12" name="__codelineno-0-12"></a>worker worker worker      worker
 </code></pre></div></td></tr></table></div>
 <p>主线程 accept + 有界任务队列 + N 个工作线程。线程数有上界,不会 1 连接 1 线程地无限创建。</p>
-<h2 id="条件变量谓词循环">条件变量谓词循环<a class="headerlink" href="#条件变量谓词循环" title="Permanent link"></a></h2>
+<h2 id="条件变量谓词循环">条件变量谓词循环<a class="headerlink" href="#条件变量谓词循环" title="Permanent link">#</a></h2>
 <p>同步的核心是「条件变量 + 谓词循环」的标准写法,天然免疫虚假唤醒:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
@@ -1532,7 +1532,7 @@
 <a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>队列满时 <code>tp_submit()</code> 阻塞 → accept 线程自然停住 → 内核 backlog 兜底,形成一条限流链条,不会无限堆积连接。另外任务是在<strong>锁外执行</strong>的——唤醒别人之后先释放锁再 <code>t.fn(t.arg)</code>,避免长时间持锁把提交者全堵住。</p>
-<h2 id="56-组-benchmark">56 组 benchmark<a class="headerlink" href="#56-组-benchmark" title="Permanent link"></a></h2>
+<h2 id="56-组-benchmark">56 组 benchmark<a class="headerlink" href="#56-组-benchmark" title="Permanent link">#</a></h2>
 <p>峰值吞吐(req/s):</p>
 <table>
 <thead>
@@ -1597,7 +1597,7 @@
 <li><strong>过订阅</strong>:池 ≥ 32 吞吐不再上升;并发 ≥ 32 时平均延迟从 ~37µs 恶化到 73–148µs——线程过订阅的上下文切换是经典模型的瓶颈</li>
 </ul>
 <p>正确性验证也做了:池 = 1、队列容量 = 4、64 客户端同时压入 12.8 万请求,全部完成、零错误、无死锁。</p>
-<h2 id="优雅关闭">优雅关闭<a class="headerlink" href="#优雅关闭" title="Permanent link"></a></h2>
+<h2 id="优雅关闭">优雅关闭<a class="headerlink" href="#优雅关闭" title="Permanent link">#</a></h2>
 <p><code>tp_destroy()</code>:置 <code>shutdown</code> → <code>broadcast</code> 唤醒所有等待线程 → worker 排空队列后自行退出 → 主线程 <code>pthread_join</code> 回收:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
@@ -1616,7 +1616,7 @@
 <a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">tp</span><span class="o">-&gt;</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <p>广播而不是单发,因为可能有多个线程同时在等,要把<strong>所有</strong>等待线程都叫起来。</p>
-<h2 id="局限和后续">局限和后续<a class="headerlink" href="#局限和后续" title="Permanent link"></a></h2>
+<h2 id="局限和后续">局限和后续<a class="headerlink" href="#局限和后续" title="Permanent link">#</a></h2>
 <p>模型的局限也写在 README 里了:阻塞 I/O、连接上限 ≈ 线程数、不适合 C10K。后续方向:epoll/kqueue 事件驱动版、HTTP 解析、流水线客户端(epoll 部分已经在 009 里接着动手了)。</p>
 
 

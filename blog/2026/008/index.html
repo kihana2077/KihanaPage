@@ -1424,7 +1424,7 @@
   
 
 
-<h1 id="socket-网络编程从-tcp-握手上路">socket 网络编程:从 TCP 握手上路<a class="headerlink" href="#socket-网络编程从-tcp-握手上路" title="Permanent link"></a></h1>
+<h1 id="socket-网络编程从-tcp-握手上路">socket 网络编程:从 TCP 握手上路<a class="headerlink" href="#socket-网络编程从-tcp-握手上路" title="Permanent link">#</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 477 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 72 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 2 分钟</p>
 </div>
@@ -1433,7 +1433,7 @@
 <li><code>tcp_mini_client_test.c</code> / <code>tcp_mini_server_test.c</code> — 最小版,只验证「连得上」</li>
 <li><code>tcp_client.c</code> / <code>tcp_server.c</code> — 完整版,双向 <code>send</code>/<code>recv</code> 通信</li>
 </ul>
-<h2 id="服务端五步走">服务端:五步走<a class="headerlink" href="#服务端五步走" title="Permanent link"></a></h2>
+<h2 id="服务端五步走">服务端:五步走<a class="headerlink" href="#服务端五步走" title="Permanent link">#</a></h2>
 <p><code>tcp_server.c</code> 把服务端的流程写得很清楚:<strong>socket → bind → listen → accept → 收发</strong>:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
@@ -1514,7 +1514,7 @@
 <a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>每个失败路径都带 <code>perror</code> + <code>close(fd)</code> 清理,这份习惯保持到了后面所有代码里。</p>
-<h2 id="客户端主动出击">客户端:主动出击<a class="headerlink" href="#客户端主动出击" title="Permanent link"></a></h2>
+<h2 id="客户端主动出击">客户端:主动出击<a class="headerlink" href="#客户端主动出击" title="Permanent link">#</a></h2>
 <p><code>tcp_client.c</code> 是另一条线:<strong>socket → connect → 收发</strong>:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
@@ -1579,7 +1579,7 @@
 <a id="__codelineno-1-31" name="__codelineno-1-31"></a><span class="n">close</span><span class="p">(</span><span class="n">client_fd</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <p><code>inet_pton</code> 把 <code>"127.0.0.1"</code> 点分十进制字符串转成二进制地址,转失败返回 0(检查的是 <code>!= 1</code>)。</p>
-<h2 id="三个要点">三个要点<a class="headerlink" href="#三个要点" title="Permanent link"></a></h2>
+<h2 id="三个要点">三个要点<a class="headerlink" href="#三个要点" title="Permanent link">#</a></h2>
 <p><strong>1. 网络字节序。</strong> <code>htons(9191)</code>、<code>htonl(INADDR_ANY)</code> 不能省。端口号和 IP 都是多字节整数,网络传输统一用大端(网络字节序),主机字节序要转过去。忘了 <code>htons</code> 的话,端口 9191 会变成一个莫名其妙的数,连都连不上——这是 socket 新手第一个坑。</p>
 <p><strong>2. <code>accept</code> 才建立真正的连接。</strong> <code>listen</code> 只是让内核监听,<code>accept</code> 才从等待队列里取一个客户端、返回一个专门通信的套接字。<code>accept</code> 之后用的是返回的 <code>client_fd</code> 收发,原来的监听 <code>fd</code> 还能继续 accept 下一个连接——「监听套接字 / 通信套接字」分离是这个阶段的核心概念。</p>
 <p><strong>3. <code>SO_REUSEADDR</code>。</strong> 服务器刚关掉、端口还在 <code>TIME_WAIT</code> 状态时,不加这个选项重启 <code>bind</code> 会失败:</p>
@@ -1588,7 +1588,7 @@
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">setsockopt</span><span class="p">(</span><span class="n">server_fd</span><span class="p">,</span><span class="n">SOL_SOCKET</span><span class="p">,</span><span class="n">SO_REUSEADDR</span><span class="p">,</span><span class="o">&amp;</span><span class="n">opt</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">opt</span><span class="p">));</span>
 </code></pre></div></td></tr></table></div>
 <p>这个小细节是踩过坑才记得住的。</p>
-<h2 id="小结">小结<a class="headerlink" href="#小结" title="Permanent link"></a></h2>
+<h2 id="小结">小结<a class="headerlink" href="#小结" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>

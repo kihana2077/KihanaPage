@@ -5,7 +5,12 @@
     document.querySelectorAll('.md-content h3[id]').forEach(heading => {
       let count = 0;
       for (let node = heading.nextElementSibling; node && node.tagName !== 'H3'; node = node.nextElementSibling) {
-        count += node.tagName === 'LI' ? 1 : node.querySelectorAll('li').length;
+        if (node.tagName === 'LI') {
+          count += 1;
+          node.classList.add('tag-article-item');
+        } else {
+          count += node.querySelectorAll('li').length;
+        }
       }
       counts.set(heading.id, count);
     });

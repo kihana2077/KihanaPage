@@ -1442,12 +1442,12 @@
   
 
 
-<h1 id="linux-进程与-ipc从-fork-到共享内存">Linux 进程与 IPC:从 fork 到共享内存<a class="headerlink" href="#linux-进程与-ipc从-fork-到共享内存" title="Permanent link"></a></h1>
+<h1 id="linux-进程与-ipc从-fork-到共享内存">Linux 进程与 IPC:从 fork 到共享内存<a class="headerlink" href="#linux-进程与-ipc从-fork-到共享内存" title="Permanent link">#</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 497 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l73.3-73.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 51 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 2 分钟</p>
 </div>
 <p>接上一篇,这一篇进入 Linux 并发里更核心的一块——进程与进程间通信(IPC)。<code>process_test/</code> 下的代码从 7 月下旬开始铺开。</p>
-<h2 id="fork怎么让一个进程变成两个">fork:怎么让一个进程变成两个<a class="headerlink" href="#fork怎么让一个进程变成两个" title="Permanent link"></a></h2>
+<h2 id="fork怎么让一个进程变成两个">fork:怎么让一个进程变成两个<a class="headerlink" href="#fork怎么让一个进程变成两个" title="Permanent link">#</a></h2>
 <p>一切的起点是 <code>fork()</code>,用最简单的问题打开局面:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
@@ -1472,7 +1472,7 @@
 <a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>配套练习:<code>waitpid_test.c</code>(父进程等子进程结束)、<code>orphan_process.c</code>(孤儿进程)、<code>execve_test.c</code>(在进程里执行另一个程序)。从分身 → 等待 → 收养 → 换身,进程生命周期基本走了一遍。</p>
-<h2 id="管道与-fifo">管道与 FIFO<a class="headerlink" href="#管道与-fifo" title="Permanent link"></a></h2>
+<h2 id="管道与-fifo">管道与 FIFO<a class="headerlink" href="#管道与-fifo" title="Permanent link">#</a></h2>
 <p>无名管道(<code>unamed_pipe_test.c</code>)适合父子进程:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
@@ -1493,7 +1493,7 @@
 <a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>FIFO(<code>fifo_read.c</code> / <code>fifo_write.c</code>)是有名字的管道,不相关的进程也能通过文件系统里的特殊文件互通。从「亲缘进程才能用」到「随便谁都能用」,管道这条线算是走通了。</p>
-<h2 id="posix-消息队列">POSIX 消息队列<a class="headerlink" href="#posix-消息队列" title="Permanent link"></a></h2>
+<h2 id="posix-消息队列">POSIX 消息队列<a class="headerlink" href="#posix-消息队列" title="Permanent link">#</a></h2>
 <p><code>mq_p&amp;s.c</code> 是完整的父子通信演示:父进程 fork 出子进程,<code>mq_send</code> 一条条发,子进程 <code>mq_receive</code> 接收打印。</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
@@ -1546,7 +1546,7 @@
 <a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pid</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">mq_unlink</span><span class="p">(</span><span class="n">MY_QUEUE</span><span class="p">);</span><span class="w">   </span><span class="c1">// 用完记得删除</span>
 </code></pre></div></td></tr></table></div>
 <p>这里的收尾做得比较规范:<code>mq_unlink</code> 清理、<code>O_EXCL</code> 防重名、父子用 <code>waitpid</code> 同步。</p>
-<h2 id="共享内存">共享内存<a class="headerlink" href="#共享内存" title="Permanent link"></a></h2>
+<h2 id="共享内存">共享内存<a class="headerlink" href="#共享内存" title="Permanent link">#</a></h2>
 <p>压轴是共享内存。<code>shared_memory.c</code> 把流程拆成六步:<code>shm_open()</code> 创建 → <code>ftruncate()</code> 设大小 → <code>mmap()</code> 映射 → <code>close(fd)</code> 提前关描述符(映射仍在)→ <code>fork()</code> 子进程继承映射 → <code>munmap()</code> + <code>shm_unlink()</code> 清理。</p>
 <p>核心是 <code>mmap</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
@@ -1562,7 +1562,7 @@
 <a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><code>MAP_SHARED</code> 让对映射区的修改写回底层对象,其他进程也能看到。父进程 <code>strcpy</code> 写消息,子进程 <code>while (shm_ptr[0] == '\0');</code> 轮询等数据——代码里也老老实实注释了「生产环境请用信号量/条件变量,这里仅教学演示」。</p>
-<h2 id="小结">小结<a class="headerlink" href="#小结" title="Permanent link"></a></h2>
+<h2 id="小结">小结<a class="headerlink" href="#小结" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
