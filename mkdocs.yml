@@ -136,8 +136,9 @@ markdown_extensions:
       - pymdownx.arithmatex:  # latex支持
           generic: true
       - toc:
-          permalink: true # 固定标题位置为当前位置
+          permalink: "#" # 使用普通字符，避免图标字体缺字显示为方框
           toc_depth: 3
+          slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
       - pymdownx.highlight: # 代码块高亮
           anchor_linenums: true
           linenums: true # 显示行号
@@ -149,9 +150,6 @@ markdown_extensions:
           alternate_style: true
       - pymdownx.tasklist:
           custom_checkbox: true
-      - markdown.extensions.toc:
-          slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
-          permalink: "\ue157"
 
 extra_css:
   - stylesheets/extra.css
