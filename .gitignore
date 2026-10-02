@@ -2,3 +2,4 @@
 backups/
 __pycache__/
 *.pyc
+overrides/hooks/.__gh_heatmap_cache__/

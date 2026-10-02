@@ -67,3 +67,5 @@ statistics: true
   <span>本站共有 {{ pages }} 个页面、{{ words }} 个字、{{ images }} 张图片。</span>
   <img src="https://count.getloli.com/@blog.kihana.asia?name=blog.kihana.asia&amp;theme=yousa-ling&amp;padding=6&amp;offset=0&amp;align=top&amp;scale=1&amp;pixelated=1&amp;darkmode=auto" alt="博客访问计数" loading="lazy" decoding="async">
 </div>
+
+{{ github_heatmap }}

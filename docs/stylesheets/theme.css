@@ -162,6 +162,49 @@ body, button, input { font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif
 .md-typeset .home-about img { width: 100%; max-height: 9rem; margin: 0; object-fit: contain; }
 .home-footnote { display: flex; flex-direction: column; align-items: flex-start; gap: .8rem; margin: 1.4rem 0; color: var(--home-muted); font-size: .75rem; }
 .md-typeset .home-footnote img { width: min(100%, 24rem); height: auto; max-height: none; margin: 0; }
+
+/* GitHub contribution heatmap, rendered by overrides/hooks/github_heatmap.py. */
+.gh-heatmap {
+  margin: 1.5rem 0 0;
+  padding: .85rem 1rem 1rem;
+  border: 1px solid var(--card-border);
+  border-radius: .8rem;
+  background: var(--card-surface);
+  box-shadow: 0 .15rem .6rem rgba(29, 37, 83, .035);
+  --gh-l0: var(--card-border);
+  --gh-l1: color-mix(in srgb, var(--md-primary-fg-color) 32%, var(--card-surface));
+  --gh-l2: color-mix(in srgb, var(--md-primary-fg-color) 58%, var(--card-surface));
+  --gh-l3: color-mix(in srgb, var(--md-primary-fg-color) 80%, var(--card-surface));
+  --gh-l4: var(--md-primary-fg-color);
+}
+.gh-heatmap__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .7rem; margin-bottom: .55rem; }
+.gh-heatmap__head strong { font-size: .85rem; }
+.gh-heatmap__head span { color: var(--home-muted); font-size: .68rem; }
+.gh-heatmap__scroll { overflow-x: auto; padding-bottom: .25rem; scrollbar-width: thin; }/* Rendered at its natural size instead of being stretched to the container:
+   scaling the SVG would enlarge the month labels along with it and make them
+   collide, which is what the pixel-scale geometry in the hook relies on. */
+.md-typeset .gh-heatmap__svg { display: block; width: auto; max-width: 100%; height: auto; margin: 0; border-radius: 0; }
+.gh-heatmap__day { fill: var(--gh-l0); }
+.gh-heatmap__day--l0 { fill: var(--gh-l0); }
+.gh-heatmap__day--l1 { fill: var(--gh-l1); }
+.gh-heatmap__day--l2 { fill: var(--gh-l2); }
+.gh-heatmap__day--l3 { fill: var(--gh-l3); }
+.gh-heatmap__day--l4 { fill: var(--gh-l4); }
+/* Fill only: the SVG carries its own font-size attribute, because a theme rule
+   with higher specificity was able to override the stylesheet value. */
+.md-typeset .gh-heatmap__month,
+.md-typeset .gh-heatmap__weekday { fill: var(--home-muted); font-size: 9px; }
+.gh-heatmap__legend { display: flex; flex-wrap: nowrap; align-items: center; justify-content: flex-end; gap: .34rem; margin-top: .5rem; color: var(--home-muted); font-size: .62rem; line-height: 1; }
+.gh-heatmap__legend > * { flex: 0 0 auto; }
+.gh-heatmap__legend a { margin-left: .6rem; color: var(--home-link-color); font-weight: 700; text-decoration: none; }
+.gh-heatmap__legend a:hover { text-decoration: underline; }
+.gh-heatmap__legend a:focus-visible { outline: 2px solid var(--md-accent-fg-color); outline-offset: 2px; }
+/* The swatches are inline SVGs, so the theme's blanket svg rules need pinning. */
+.md-typeset .gh-heatmap__legend .gh-heatmap__day { display: inline-block; width: 10px; min-width: 10px; height: 10px; margin: 0; border-radius: 2px; }
+/* The zero level sits next to "少" as a pale swatch, matching GitHub's legend. */
+.md-typeset .gh-heatmap__legend .gh-heatmap__day--l0 { border: 1px solid color-mix(in srgb, var(--card-border) 55%, var(--home-muted)); }
+.gh-heatmap__fallback { margin: 1.2rem 0 0; color: var(--home-muted); font-size: .72rem; }
+
 .md-typeset .friend-empty { display: flex; flex-direction: column; align-items: center; gap: .35rem; padding: 1.4rem; border-radius: .8rem; text-align: center; }
 .friend-empty > span { color: var(--home-link-color); font-size: 1.4rem; }
 .friend-empty strong { font-size: .9rem; }

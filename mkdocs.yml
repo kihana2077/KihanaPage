@@ -152,7 +152,7 @@ markdown_extensions:
           custom_checkbox: true
 
 extra_css:
-  - stylesheets/theme.css?v=20261003-8
+  - stylesheets/theme.css?v=20261003-10
   - https://cdn.jsdelivr.net/npm/sakana-widget@latest/lib/sakana.min.css
 
 extra_javascript:
@@ -166,6 +166,7 @@ extra_javascript:
 hooks:
   - overrides/hooks/rss.py
   - overrides/hooks/navigation.py
+  - overrides/hooks/github_heatmap.py
 
 
 copyright: Copyright © 2025–2026 Kihana <a href="https://icp.gov.moe/?keyword=20250772" target="_blank" rel="noopener">萌ICP备20250772号</a>
