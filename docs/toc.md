@@ -1,5 +1,5 @@
 ---
-title: 目录
+title: 归档
 giscus: false
 hide:  
     - navigation

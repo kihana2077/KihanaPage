@@ -5,9 +5,6 @@
 {% endblock %}
 
 {% block content %}
-  {% if page and page.url.startswith('blog/') and page.url.count('/') >= 3 %}
-    <div class="profile-card-mobile">{% include "partials/profile-card.html" %}</div>
-  {% endif %}
   {{ super() }}
 
   {% if page and page.meta and page.meta.tags and page.url.startswith('blog/') %}
@@ -17,6 +14,10 @@
         <a href="{{ 'tags/' | url }}#{{ tag | urlencode }}">#{{ tag }}</a>
       {% endfor %}
     </nav>
+  {% endif %}
+
+  {% if page and page.url.startswith('blog/') and page.url.count('/') >= 3 %}
+    <div class="profile-card-mobile">{% include "partials/profile-card.html" %}</div>
   {% endif %}
 
   {% if page and (not page.meta or page.meta.giscus != false) %}

@@ -1,4 +1,5 @@
 ---
+title: 留言
 hide:
     - navigation
     - footer

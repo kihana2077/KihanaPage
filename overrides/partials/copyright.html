@@ -1,0 +1,16 @@
+<div class="md-copyright site-copyright">
+  {% if config.copyright %}
+    <div class="md-copyright__highlight">
+      <span class="site-uptime" aria-label="网站运行时间">
+        本站已运行 <time id="site-uptime" datetime="2025-08-23T00:38:10+08:00">自 2025-08-23 起</time>
+      </span>
+      {{ config.copyright }}
+    </div>
+  {% endif %}
+  {% if not config.extra.generator == false %}
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  {% endif %}
+</div>
