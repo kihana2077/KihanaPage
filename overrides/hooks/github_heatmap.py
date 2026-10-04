@@ -42,13 +42,17 @@ LEVEL_CLASS = {
     3: "gh-heatmap__day--l3",
     4: "gh-heatmap__day--l4",
 }
-CELL = 13.0
-GAP = 4.0
+CELL = 12.8
+GAP = 4.1
 PITCH = CELL + GAP
 ROWS = 7
 LEFT = 32.0
 TOP = 18.0
 RADIUS = 2.5
+# Trailing space after the last column. The graph's own right edge is placed at
+# the viewBox edge minus this, so the grid runs to the card edge instead of
+# stopping short; the same amount covers the last month label's overhang.
+RIGHT = 26.0
 LABEL_FONT = 8
 MONTH_BASELINE = 10.0
 WEEKDAY_BASELINE = CELL / 2 + 3.6
@@ -167,11 +171,10 @@ def _load(username: str) -> dict:
 
 
 def _month_labels(days: list[tuple[str, int]]) -> list[tuple[float, str]]:
-    """Label the first week of each month, dropping labels that would collide.
+    """Return ``(x, name)`` for the first week of each month, dropping collisions.
 
-    The graph is drawn at pixel scale, so a label may start once the previous
-    one has ended. With real data every month fits; the guard is here because a
-    year with unusually tight month starts could still squeeze two together.
+    ``x`` is the absolute user-unit coordinate: the caller writes it straight
+    into the SVG, so ``LEFT`` is applied here exactly once.
     """
     labels: list[tuple[float, str]] = []
     seen: set[str] = set()
@@ -210,7 +213,10 @@ def _render(data: dict) -> str:
         )
 
     columns = (len(days) + ROWS - 1) // ROWS
-    width = LEFT + columns * PITCH
+    # The grid's own right edge lands just inside the viewBox, so it lines up
+    # with the card instead of stopping short, and the last month label has a
+    # little room to overhang the final column.
+    width = LEFT + columns * PITCH + RIGHT
     height = TOP + ROWS * PITCH
 
     parts = [
@@ -222,9 +228,12 @@ def _render(data: dict) -> str:
     # styles these classes, but an attribute cannot be lost to a more specific
     # rule from the theme, which is what made the month labels overlap.
 
-    for offset, label in _month_labels(days):
+    for x, label in _month_labels(days):
+        # x is already absolute; a label must not run past the viewBox.
+        if x + len(label) * LABEL_CHAR > width:
+            continue
         parts.append(
-            f'<text class="gh-heatmap__month" x="{LEFT + offset:.1f}" '
+            f'<text class="gh-heatmap__month" x="{x:.1f}" '
             f'y="{MONTH_BASELINE:.1f}" font-size="{LABEL_FONT}">{label}</text>'
         )
 
