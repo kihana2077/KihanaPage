@@ -180,10 +180,12 @@ body, button, input { font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif
 .gh-heatmap__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .7rem; margin-bottom: .55rem; }
 .gh-heatmap__head strong { font-size: .85rem; }
 .gh-heatmap__head span { color: var(--home-muted); font-size: .68rem; }
-.gh-heatmap__scroll { overflow-x: auto; padding-bottom: .25rem; scrollbar-width: thin; }/* Rendered at its natural size instead of being stretched to the container:
-   scaling the SVG would enlarge the month labels along with it and make them
-   collide, which is what the pixel-scale geometry in the hook relies on. */
-.md-typeset .gh-heatmap__svg { display: block; width: auto; max-width: 100%; height: auto; margin: 0; border-radius: 0; }
+.gh-heatmap__scroll { overflow-x: auto; padding-bottom: .25rem; scrollbar-width: thin; }
+/* Stretched to the card so the grid lines up with the text above it. The whole
+   SVG scales uniformly, so the month labels keep their spacing relative to the
+   cells and cannot collide with each other; the hook's font-size attribute is
+   in user units, which is why that stays correct at any width. */
+.md-typeset .gh-heatmap__svg { display: block; width: 100%; height: auto; margin: 0; border-radius: 0; }
 .gh-heatmap__day { fill: var(--gh-l0); }
 .gh-heatmap__day--l0 { fill: var(--gh-l0); }
 .gh-heatmap__day--l1 { fill: var(--gh-l1); }
