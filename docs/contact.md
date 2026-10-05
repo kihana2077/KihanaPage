@@ -9,6 +9,8 @@ hide:
 
 # 留言板
 
+![今日诗词](https://v2.jinrishici.com/one.svg)
+
 <p class="social-intro">路过也好，常来也好，欢迎在这里留下几句话。</p>
 
 <div class="guestbook-note">
