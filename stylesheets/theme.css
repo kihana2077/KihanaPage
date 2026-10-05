@@ -264,30 +264,33 @@ body, button, input { font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif
 .site-uptime { display: block; margin-bottom: .2rem; }
 .site-uptime time { font-variant-numeric: tabular-nums; }
 
-.md-typeset .blog-list-card {
-  display: block;
-  margin: .85rem 0;
-  padding: 1rem 1.15rem;
-  border: 1px solid var(--card-border);
-  border-radius: .8rem;
-  background: var(--card-surface);
-  box-shadow: 0 .2rem .7rem rgba(29, 37, 83, .05);
-  color: var(--md-default-fg-color);
-  text-decoration: none;
-  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, border-color .2s ease;
-}
-.md-typeset .blog-list-card:hover {
-  transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--md-primary-fg-color) 28%, var(--card-border));
-  background: var(--card-surface-hover);
-  box-shadow: 0 .4rem 1rem rgba(29, 37, 83, .09);
-}
-.md-typeset .blog-list-card:active { transform: translateY(0) scale(.995); }
-.md-typeset .blog-list-card:focus-visible { outline: 2px solid var(--md-accent-fg-color); outline-offset: 3px; }
-.md-typeset .blog-list-card h3 { margin: .35rem 0 .45rem; color: var(--home-link-color); }
-.blog-list-card__date { font-size: .72rem; opacity: .7; }
-.blog-list-card__body p { margin: .4rem 0; font-size: .82rem; }
-.blog-list-card__tags { display: flex; flex-wrap: wrap; gap: .4rem; font-size: .68rem; opacity: .8; }
+/* Article index: title links and independent topic links. */
+.md-content__inner:has(.listing-intro),
+.md-content__inner:has(.archive-intro) { max-width: 46rem; margin-inline: auto; padding-inline: .8rem; }
+.md-typeset .listing-intro, .md-typeset .archive-intro { color: var(--home-muted); font-size: .78rem; margin: -.8rem 0 1.3rem; }
+.md-typeset .blog-list-card { margin: 0; padding: .85rem .2rem; border-bottom: 1px solid color-mix(in srgb, var(--home-muted) 20%, transparent); }
+.md-typeset .blog-list-card h3 { margin: .2rem 0 .45rem; font-size: 1rem; font-weight: 650; line-height: 1.55; }
+.md-typeset .blog-list-card h3 a { color: var(--md-default-fg-color); }
+.md-typeset .blog-list-card h3 a:hover { color: var(--home-link-color); }
+.blog-list-card__date { font-size: .66rem; color: var(--home-muted); font-variant-numeric: tabular-nums; }
+.blog-list-card__body p { margin: .4rem 0; font-size: .78rem; color: var(--home-muted); }
+.blog-list-card__tags { display: flex; flex-wrap: wrap; gap: .3rem .7rem; }
+.md-typeset .blog-list-card__tags a { font-size: .65rem; color: var(--home-link-color); padding-block: .15rem; }
+.blog-list-card__tags a:hover { text-decoration: underline; }
+.blog-list-card a:focus-visible { outline: 2px solid var(--md-accent-fg-color); outline-offset: 3px; }
+
+/* Archive dates share a column; years provide the main visual anchors. */
+.archive-timeline { margin-top: 1.6rem; }
+.md-typeset .archive-year { margin: 0 0 1.7rem; }
+.md-typeset .archive-year h2 { margin: 0 0 .7rem; font-size: 1.35rem; font-weight: 650; }
+.archive-year h2 span { margin-left: .5rem; font-size: .68rem; color: var(--home-muted); font-weight: 400; }
+.md-typeset .archive-year ol { list-style: none; margin: 0 0 0 .25rem; padding: .1rem 0 .1rem 1rem; border-left: 1px solid color-mix(in srgb, var(--home-muted) 25%, transparent); }
+.md-typeset .archive-year li { position: relative; display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: .6rem; margin: 0; padding: .5rem 0; align-items: baseline; }
+.archive-year li::before { content: ''; position: absolute; left: -1.17rem; top: 1rem; width: .3rem; height: .3rem; border-radius: 50%; background: var(--md-primary-fg-color); }
+.archive-year time { color: var(--home-muted); font-size: .68rem; font-variant-numeric: tabular-nums; }
+.md-typeset .archive-year a { color: var(--md-default-fg-color); font-size: .8rem; }
+.md-typeset .archive-year a:hover { color: var(--home-link-color); }
+.archive-year a:focus-visible { outline: 2px solid var(--md-accent-fg-color); outline-offset: 3px; }
 
 .profile-card {
   padding: 1rem;
@@ -491,4 +494,53 @@ body, button, input { font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif
   .md-typeset .blogging-tags-grid { gap: .25rem .4rem; padding: .7rem; }
   .md-typeset .blogging-tags-grid .blogging-tag { min-height: 2.2rem; font-size: calc(.75rem + var(--tag-weight, 0) * .13rem); }
   .md-typeset .tag-results__list li { flex-direction: column; gap: .15rem; padding: .6rem 0; }
+}
+
+/* The article outline remains above the compact author card. */
+.md-content__inner:has(.article-tags) > h1 { font-weight: 600; font-size: 1.4rem; line-height: 1.45; color: var(--md-default-fg-color); }
+.md-sidebar--secondary:has(.profile-card) .md-sidebar__scrollwrap { max-height: calc(100vh - 16rem); }
+.md-sidebar--secondary .profile-card { margin: 1.2rem 0 .5rem; padding: .7rem; box-shadow: none; border-radius: .55rem; }
+.md-sidebar--secondary .profile-card__avatar { width: 2.6rem; height: 2.6rem; border-width: 2px; }
+.md-sidebar--secondary .profile-card__name { font-size: .85rem; }
+.md-sidebar--secondary .profile-card__intro { font-size: .65rem; margin: .35rem 0 .55rem; }
+@media screen and (max-width: 44.984375em) {
+  .md-typeset .blog-list-card { padding: .85rem 0; }
+  .md-typeset .blog-list-card h3 { font-size: .95rem; }
+  .md-typeset .blog-list-card__tags a { min-height: 1.65rem; display: inline-flex; align-items: center; }
+  .md-typeset .archive-year li { grid-template-columns: 2.5rem minmax(0, 1fr); gap: .4rem; }
+}
+
+/* Social pages share the same quiet, centered reading column. */
+.md-content__inner:has(.social-intro) { max-width: 42rem; margin-inline: auto; padding-inline: .8rem; }
+.md-content__inner:has(.social-intro) .md-source-file { display: none; }
+.md-typeset .social-intro { margin: -.7rem 0 .6rem; font-size: .85rem; color: var(--home-muted); line-height: 1.8; }
+.md-typeset .social-description { font-size: .75rem; color: var(--home-muted); line-height: 1.8; }
+.md-content__inner:has(.social-intro) h2 { font-size: 1.1rem; font-weight: 600; margin-top: 1.6rem; }
+.friend-copy-tools { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .8rem; margin: .75rem 0; }
+.friend-copy-tools[hidden], .friend-copy-fallback[hidden] { display: none; }
+.friend-copy { border: 1px solid var(--home-link-color); border-radius: .35rem; color: var(--home-link-color); padding: .4rem .65rem; font: inherit; font-size: .7rem; cursor: pointer; }
+.friend-copy:hover { background: var(--card-surface); }
+.friend-copy:focus-visible, .gh-heatmap__scroll:focus-visible { outline: 2px solid var(--md-accent-fg-color); outline-offset: 3px; }
+.friend-copy-status { font-size: .65rem; color: var(--home-muted); }
+.friend-copy-fallback { width: 100%; min-height: 8rem; padding: .6rem; font: inherit; font-size: .72rem; background: var(--card-surface); color: var(--md-default-fg-color); border: 1px solid var(--card-border); border-radius: .4rem; }
+.md-typeset .guestbook-note { margin: 1.2rem 0 1.6rem; padding: .85rem 1rem; border-left: 3px solid var(--md-primary-fg-color); background: var(--card-surface); border-radius: 0 .5rem .5rem 0; }
+.guestbook-note strong { font-size: .85rem; }
+.md-typeset .guestbook-note p { margin: .4rem 0 0; font-size: .76rem; color: var(--home-muted); line-height: 1.8; }
+.md-typeset .comments-help { margin: -.4rem 0 1rem; font-size: .68rem; color: var(--home-muted); line-height: 1.8; }
+.md-content__inner:has(.social-intro) .giscus { min-height: 12rem; }
+@media screen and (max-width: 44.984375em) {
+  .md-typeset .gh-heatmap__svg { min-width: 40rem; }
+  .gh-heatmap__scroll { overscroll-behavior-x: contain; }
+  .friend-info__row { display: grid; grid-template-columns: 1fr; gap: .2rem; }
+  .friend-copy { min-height: 2.2rem; }
+}
+@media (prefers-reduced-motion: reduce) { .friend-card { transition: none; } }
+
+/* Keep the original homepage structure; refine alignment and mobile spacing. */
+.md-typeset .gh-heatmap { display: block; margin-inline: 0; max-width: 100%; }
+.home-footnote { gap: .55rem; margin: 1.2rem 0; }
+@media screen and (max-width: 44.984375em) {
+  .md-typeset .home-hero { padding: .85rem; }
+  .md-typeset .home-hero__lead { font-size: .78rem; line-height: 1.7; }
+  .md-typeset .home-hero__image { max-height: 5.5rem; }
 }
