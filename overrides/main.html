@@ -22,6 +22,9 @@
 
   {% if page and (not page.meta or page.meta.giscus != false) %}
   <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
+  {% if page.file.src_uri in ['friend.md', 'contact.md'] %}
+    <p class="comments-help">登录 GitHub 即可留言。如果评论区未显示，可以<a href="https://github.com/kihana2077/KihanaPage/discussions" target="_blank" rel="noopener">前往 GitHub 讨论区 ↗</a>。</p>
+  {% endif %}
   <script src="https://giscus.app/client.js"
         data-repo="kihana2077/KihanaPage"
         data-repo-id="R_kgDOPigL3A"

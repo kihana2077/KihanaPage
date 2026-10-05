@@ -152,7 +152,7 @@ markdown_extensions:
           custom_checkbox: true
 
 extra_css:
-  - stylesheets/theme.css?v=20261003-11
+  - stylesheets/theme.css?v=20261005-6
   - https://cdn.jsdelivr.net/npm/sakana-widget@latest/lib/sakana.min.css
 
 extra_javascript:
@@ -160,7 +160,7 @@ extra_javascript:
   - javascript/background.js
   - javascript/mathjax.js
   - javascript/extras.js?v=20261003-3
-  - javascript/site.js?v=20261003-2
+  - javascript/site.js?v=20261005-1
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://cdn.jsdelivr.net/npm/sakana-widget@latest/lib/sakana.min.js
 hooks:

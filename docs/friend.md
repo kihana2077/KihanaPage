@@ -3,12 +3,16 @@ title: 友链
 hide:
   - navigation
   - footer
+  - toc
+  - statistics
 glightbox: false
 ---
 
 # 友链
 
-灯与灯之间隔着夜色，也正因如此才照见了彼此。欢迎交换友链，在下方评论区留下站名、网址和一句简介；也可以直接照着下面的卡片格式发给我。
+<p class="social-intro">灯与灯之间隔着夜色，也正因如此才照见了彼此。</p>
+
+<p class="social-description">这里是常去的小站。欢迎交换友链，在下方留言留下站名、网址和一句简介。</p>
 
 <div class="friend-grid">
   <a class="friend-card" href="https://soraginko.moe/" target="_blank" rel="noopener">
@@ -23,7 +27,13 @@ glightbox: false
 
 ## 本站信息
 
-想把这里也加上去的话，复制下面这几行就好；添加完成后告诉我一声，我会尽快把你放上来。
+<p class="social-description">想把这里也加上去的话，可以复制本站信息；添加完成后，在下方告诉我一声。</p>
+
+<div class="friend-copy-tools" hidden>
+  <button class="friend-copy" type="button">复制本站信息</button>
+  <span class="friend-copy-status" role="status"></span>
+</div>
+<textarea class="friend-copy-fallback" aria-label="本站友链信息，可手动复制" readonly hidden></textarea>
 
 <div class="friend-info">
   <div class="friend-info__row">

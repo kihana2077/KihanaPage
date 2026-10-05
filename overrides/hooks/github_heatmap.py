@@ -23,7 +23,7 @@ from pathlib import Path
 
 PLACEHOLDER = "{{ github_heatmap }}"
 CACHE_PATH = Path(__file__).resolve().parent / ".__gh_heatmap_cache__" / "contributions.json"
-CACHE_TTL = dt.timedelta(hours=6)
+CACHE_TTL = dt.timedelta(days=30)
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/131.0 Safari/537.36"
@@ -260,12 +260,12 @@ def _render(data: dict) -> str:
 
     total = data.get("total")
     count = f"{total} 次贡献" if total else f"{len(days)} 天"
-    note = "（离线缓存）" if data.get("from_cache") else ""
+    note = f"（缓存于 {html.escape(data["fetched"][:10])}）" if data.get("from_cache") else ""
     return (
         '<figure class="gh-heatmap">'
         f'<div class="gh-heatmap__head"><strong>{count}</strong>'
         f'<span>过去一年 · @{html.escape(data["username"])}{note}</span></div>'
-        '<div class="gh-heatmap__scroll">'
+        '<div class="gh-heatmap__scroll" tabindex="0" role="region" aria-label="GitHub 贡献日历，可横向滚动">'
         + "".join(parts)
         + "</div>"
         '<div class="gh-heatmap__legend"><span>少</span>'

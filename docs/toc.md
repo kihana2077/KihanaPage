@@ -1,10 +1,15 @@
 ---
 title: 归档
 giscus: false
-hide:  
-    - navigation
-    - footer
+hide:
+  - navigation
+  - toc
+  - footer
+  - statistics
 ---
-以下按发表时间从新到旧排列，点开标题即可阅读。也可以通过[标签](tags.md)查找同主题内容。
+
+# 归档
+
+<p class="archive-intro">把一路积累的记录，按时间慢慢展开。</p>
 
 {{ chronological_index }}

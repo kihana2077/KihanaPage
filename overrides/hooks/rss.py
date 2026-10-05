@@ -1,6 +1,8 @@
 """Generate a small RSS feed for blog posts without another runtime dependency."""
 
 from datetime import date, datetime, time
+from collections import Counter
+from html import escape
 from email.utils import format_datetime
 from pathlib import Path
 import subprocess
@@ -21,7 +23,7 @@ def on_pre_build(config):
 
 def on_page_markdown(markdown, page, config, files):
     if page.file.src_uri == "toc.md":
-        markdown = markdown.replace("{{ chronological_index }}", _archive_markdown(config.docs_dir))
+        markdown = markdown.replace("{{ chronological_index }}", _archive_markdown(config.docs_dir, files, page))
     # The blogging plugin reads a flat `time` value. Reuse the article's
     # existing `date.created` so the archive, tags and feed share one date.
     value = page.meta.get("date")
@@ -30,7 +32,7 @@ def on_page_markdown(markdown, page, config, files):
     return markdown
 
 
-def _archive_markdown(docs_dir):
+def _collect_posts(docs_dir):
     posts = []
     docs = Path(docs_dir)
     for source in (docs / "blog").glob("[0-9][0-9][0-9][0-9]/*.md"):
@@ -41,19 +43,41 @@ def _archive_markdown(docs_dir):
         match = re.match(r"\A---\s*\n(.*?)\n---\s*\n", content, re.S)
         if match:
             meta = yaml.safe_load(match.group(1)) or {}
+        if meta.get("exclude_from_blog"):
+            continue
         heading = re.search(r"^#\s+(.+)$", content, re.M)
         title = meta.get("title") or (heading.group(1).strip() if heading else source.stem)
         created = _created(meta.get("date"), source)
         posts.append((created, title, source.relative_to(docs).as_posix()))
     posts.sort(key=lambda item: item[0], reverse=True)
-    lines = []
+    return posts
+
+
+def _archive_markdown(docs_dir, files, page):
+    from mkdocs.utils import get_relative_url
+
+    posts = _collect_posts(docs_dir)
+
+    counts = Counter(created.year for created, _, _ in posts)
+    lines = ['<div class="archive-timeline">']
     current_year = None
     for created, title, source in posts:
         if created.year != current_year:
+            if current_year is not None:
+                lines.append('</ol></section>')
             current_year = created.year
-            lines.extend(["", f"## {current_year}", ""])
-        lines.append(f"- **{created:%Y-%m-%d}** [{title}]({source})")
+            lines.append(f'<section class="archive-year" aria-labelledby="year-{current_year}">'
+                         f'<h2 id="year-{current_year}">{current_year} '
+                         f'<span>{counts[current_year]} 篇</span></h2><ol>')
+        target = files.get_file_from_path(source)
+        href = get_relative_url(target.url, page.url)
+        lines.append(f'<li><time datetime="{created:%Y-%m-%d}">{created:%m-%d}</time>'
+                     f'<a href="{escape(href, quote=True)}">{escape(str(title))}</a></li>')
+    if current_year is not None:
+        lines.append('</ol></section>')
+    lines.append('</div>')
     return "\n".join(lines)
+
 
 
 def _created(value, source):
